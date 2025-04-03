@@ -1,0 +1,1351 @@
+[
+  {
+    "CNPJ": "03284108000141",
+    "realizada": "2025-01-31T03:00:00.000Z",
+    "programada": {
+      "data": "2025-01-31T03:00:00.000Z",
+      "monitor1": {
+        "nome": " Fernanda Kania das Neves",
+        "telefones": "(41) 9730-4929(21)975944593"
+      },
+      "monitor2": {
+        "nome": "Jóice Azeredo Silva"
+      }
+    }
+  },
+  {
+    "CNPJ": "10488174000107",
+    "realizada": "2024-02-06T03:00:00.000Z",
+    "programada": {
+      "data": "2024-02-06T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Ana Cláudia Ramos Moreira",
+        "telefones": "(21) 99728-1195"
+      },
+      "monitor2": {
+        "nome": "Jóice Azeredo Silva",
+        "telefones": "(21)975944593"
+      }
+    }
+  },
+  {
+    "CNPJ": "26180285000264",
+    "realizada": "2025-02-17T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-17T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Carlos Antonio Pereira",
+        "telefones": "(34) 99936-0706"
+      },
+      "monitor2": {
+        "nome": "Karina Melo Gomes",
+        "telefones": "(34) 98806-0706"
+      }
+    }
+  },
+  {
+    "CNPJ": "11088620000140",
+    "realizada": "2025-02-05T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-05T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Carlos Antonio Pereira",
+        "telefones": "(34) 99936-0706"
+      },
+      "monitor2": {
+        "nome": "Karina Melo Gomes",
+        "telefones": "(34) 98806-0706"
+      }
+    }
+  },
+  {
+    "CNPJ": "23028567000171",
+    "realizada": "2025-02-18T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-18T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Carlos Antonio Pereira",
+        "telefones": "(34) 99936-0706"
+      },
+      "monitor2": {
+        "nome": "Karina Melo Gomes",
+        "telefones": "(34) 98806-0706"
+      }
+    }
+  },
+  {
+    "CNPJ": "17246772000100",
+    "realizada": "2025-02-24T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-24T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Carlos Antonio Pereira",
+        "telefones": "(34) 99936-0706"
+      },
+      "monitor2": {
+        "nome": "Karina Melo Gomes",
+        "telefones": "(34) 98806-0706"
+      }
+    }
+  },
+  {
+    "CNPJ": "06286080000331",
+    "realizada": "2025-02-19T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-19T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Carlos Antonio Pereira",
+        "telefones": "(34) 99936-0706"
+      },
+      "monitor2": {
+        "nome": "Karina Melo Gomes",
+        "telefones": "(34) 98806-0706"
+      }
+    }
+  },
+  {
+    "CNPJ": "26180285000183",
+    "realizada": "2025-02-20T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-20T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Carlos Antonio Pereira",
+        "telefones": "(34) 99936-0706"
+      },
+      "monitor2": {
+        "nome": "Karina Melo Gomes",
+        "telefones": "(34) 98806-0706"
+      }
+    }
+  },
+  {
+    "CNPJ": "09219152000154",
+    "realizada": "2025-02-21T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-21T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Carlos Antonio Pereira",
+        "telefones": "(34) 99936-0706"
+      },
+      "monitor2": {
+        "nome": "Karina Melo Gomes",
+        "telefones": "(34) 98806-0706"
+      }
+    }
+  },
+  {
+    "CNPJ": "00211354000185",
+    "realizada": "2025-02-13T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-13T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Carlos Antonio Pereira",
+        "telefones": "(34) 99936-0706"
+      },
+      "monitor2": {
+        "nome": "Karina Melo Gomes",
+        "telefones": "(34) 98806-0706"
+      }
+    }
+  },
+  {
+    "CNPJ": "20734505000278",
+    "realizada": "2025-02-06T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-06T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Carlos Antonio Pereira",
+        "telefones": "(34) 99936-0706"
+      },
+      "monitor2": {
+        "nome": "Karina Melo Gomes",
+        "telefones": "(34) 98806-0706"
+      }
+    }
+  },
+  {
+    "CNPJ": "05284121000630",
+    "realizada": "2024-02-06T03:00:00.000Z",
+    "programada": {
+      "data": "2024-02-06T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Cláudia Valéria da Silva Pimentel",
+        "telefones": "(21) 97993-8306"
+      },
+      "monitor2": {
+        "nome": "Jéssica Raposa Rocha",
+        "telefones": "(22) 99237-0711"
+      }
+    }
+  },
+  {
+    "CNPJ": "03099565000409",
+    "realizada": "2025-03-31T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-31T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Cláudia Valéria da Silva Pimentel",
+        "telefones": "(21) 97993-8306"
+      },
+      "monitor2": {
+        "nome": "Jóice Azeredo Silva",
+        "telefones": "(21)975944593"
+      }
+    }
+  },
+  {
+    "CNPJ": "03099565000247",
+    "realizada": "2025-04-01T03:00:00.000Z",
+    "programada": {
+      "data": "2025-04-01T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Cláudia Valéria da Silva Pimentel",
+        "telefones": "(21) 97993-8306"
+      },
+      "monitor2": {
+        "nome": "Jóice Azeredo Silva",
+        "telefones": "(21)975944593"
+      }
+    }
+  },
+  {
+    "CNPJ": "16801598000158",
+    "realizada": "2025-04-02T03:00:00.000Z",
+    "programada": {
+      "data": "2025-04-02T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Cláudia Valéria da Silva Pimentel",
+        "telefones": "(21) 97993-8306"
+      },
+      "monitor2": {
+        "nome": "Jóice Azeredo Silva",
+        "telefones": "(21)975944593"
+      }
+    }
+  },
+  {
+    "CNPJ": "16801598000239",
+    "realizada": "2025-04-03T03:00:00.000Z",
+    "programada": {
+      "data": "2025-04-03T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Cláudia Valéria da Silva Pimentel",
+        "telefones": "(21) 97993-8306"
+      },
+      "monitor2": {
+        "nome": "Jóice Azeredo Silva",
+        "telefones": "(21)975944593"
+      }
+    }
+  },
+  {
+    "CNPJ": "03284108000222",
+    "realizada": "2024-02-06T03:00:00.000Z",
+    "programada": {
+      "data": "2024-02-06T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Cláudia Valéria da Silva Pimentel",
+        "telefones": "(21) 97993-8306"
+      },
+      "monitor2": {
+        "nome": "Jóice Azeredo Silva",
+        "telefones": "(21)975944593"
+      }
+    }
+  },
+  {
+    "CNPJ": "10320290000104",
+    "realizada": "2025-02-17T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-17T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Elca Possidônio Moura",
+        "telefones": "(11) 91934-8571"
+      },
+      "monitor2": {
+        "nome": "Gracielle Silva Araújo",
+        "telefones": "(38) 9962-8176"
+      }
+    }
+  },
+  {
+    "CNPJ": "08027860000120",
+    "realizada": "2025-03-10T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-10T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Elca Possidônio Moura",
+        "telefones": "(11) 91934-8571"
+      },
+      "monitor2": {
+        "nome": "Gracielle Silva Araújo",
+        "telefones": "(38) 9962-8176"
+      }
+    }
+  },
+  {
+    "CNPJ": "05803744000168",
+    "realizada": "2025-02-18T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-18T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Elca Possidônio Moura",
+        "telefones": "(11) 91934-8571"
+      },
+      "monitor2": {
+        "nome": "Gracielle Silva Araújo",
+        "telefones": "(38) 9962-8176"
+      }
+    }
+  },
+  {
+    "CNPJ": "25224130000139",
+    "realizada": "2025-02-19T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-19T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Elca Possidônio Moura",
+        "telefones": "(11) 91934-8571"
+      },
+      "monitor2": {
+        "nome": "Gracielle Silva Araújo",
+        "telefones": "(38) 9962-8176"
+      }
+    }
+  },
+  {
+    "CNPJ": "11204503000103",
+    "realizada": "2025-02-20T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-20T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Elca Possidônio Moura",
+        "telefones": "(11) 91934-8571"
+      },
+      "monitor2": {
+        "nome": "Gracielle Silva Araújo",
+        "telefones": "(38) 9962-8176"
+      }
+    }
+  },
+  {
+    "CNPJ": "12565513000129",
+    "realizada": "2025-02-24T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-24T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Elca Possidônio Moura",
+        "telefones": "(11) 91934-8571"
+      },
+      "monitor2": {
+        "nome": "Gracielle Silva Araújo",
+        "telefones": "(38) 9962-8176"
+      }
+    }
+  },
+  {
+    "CNPJ": "07910103000138",
+    "realizada": "2025-01-31T03:00:00.000Z",
+    "programada": {
+      "data": "2025-01-31T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Eliane Vicente da Silva Oliveira",
+        "telefones": "21 95911-0795"
+      },
+      "monitor2": {
+        "nome": "Suzana Lima Gomes",
+        "telefones": "21 99606-5954"
+      }
+    }
+  },
+  {
+    "CNPJ": "48555775008304",
+    "realizada": "2025-01-30T03:00:00.000Z",
+    "programada": {
+      "data": "2025-01-30T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Eliane Vicente da Silva Oliveira",
+        "telefones": "21 95911-0795"
+      },
+      "monitor2": {
+        "nome": "Suzana Lima Gomes",
+        "telefones": "21 99606-5954"
+      }
+    }
+  },
+  {
+    "CNPJ": "34240228000170",
+    "realizada": "2025-02-13T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-13T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Eliane Vicente da Silva Oliveira",
+        "telefones": "21 95911-0795"
+      },
+      "monitor2": {
+        "nome": "Suzana Lima Gomes",
+        "telefones": "21 99606-5954"
+      }
+    }
+  },
+  {
+    "CNPJ": "19215751000153",
+    "realizada": "2025-02-24T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-24T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Eliane Vicente da Silva Oliveira",
+        "telefones": "21 95911-0795"
+      },
+      "monitor2": {
+        "nome": "Suzana Lima Gomes",
+        "telefones": "21 99606-5954"
+      }
+    }
+  },
+  {
+    "CNPJ": "03551218000122",
+    "realizada": "2025-02-25T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-25T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Eliane Vicente da Silva Oliveira",
+        "telefones": "21 95911-0795"
+      },
+      "monitor2": {
+        "nome": "Suzana Lima Gomes",
+        "telefones": "21 99606-5954"
+      }
+    }
+  },
+  {
+    "CNPJ": "22498999000183",
+    "realizada": "2025-02-26T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-26T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Eliane Vicente da Silva Oliveira",
+        "telefones": "21 95911-0795"
+      },
+      "monitor2": {
+        "nome": "Suzana Lima Gomes",
+        "telefones": "21 99606-5954"
+      }
+    }
+  },
+  {
+    "CNPJ": "20158170000106",
+    "realizada": "2025-02-27T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-27T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Eliane Vicente da Silva Oliveira",
+        "telefones": "21 95911-0795"
+      },
+      "monitor2": {
+        "nome": "Suzana Lima Gomes",
+        "telefones": "21 99606-5954"
+      }
+    }
+  },
+  {
+    "CNPJ": "20917302000217",
+    "realizada": "2025-02-14T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-14T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Eliane Vicente da Silva Oliveira",
+        "telefones": "21 95911-0795"
+      },
+      "monitor2": {
+        "nome": "Suzana Lima Gomes",
+        "telefones": "21 99606-5954"
+      }
+    }
+  },
+  {
+    "CNPJ": "19309807000139",
+    "realizada": "2025-03-26T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-26T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Heloisa Lorena Barroso",
+        "telefones": "32-9995-2611"
+      },
+      "monitor2": {
+        "nome": "Elcio Amorin Cardoso",
+        "telefones": "32-9922-2611"
+      }
+    }
+  },
+  {
+    "CNPJ": "00531895000190",
+    "realizada": "2025-03-14T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-14T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Heloisa Lorena Barroso",
+        "telefones": "32-9995-2611"
+      },
+      "monitor2": {
+        "nome": "Elcio Amorin Cardoso",
+        "telefones": "32-9922-2611"
+      }
+    }
+  },
+  {
+    "CNPJ": "07856329000106",
+    "realizada": "2025-03-24T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-24T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Heloisa Lorena Barroso",
+        "telefones": "32-9995-2611"
+      },
+      "monitor2": {
+        "nome": "Elcio Amorin Cardoso",
+        "telefones": "32-9922-2611"
+      }
+    }
+  },
+  {
+    "CNPJ": "22706980000185",
+    "realizada": "2025-03-17T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-17T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Heloisa Lorena Barroso",
+        "telefones": "32-9995-2611"
+      },
+      "monitor2": {
+        "nome": "Elcio Amorin Cardoso",
+        "telefones": "32-9922-2611"
+      }
+    }
+  },
+  {
+    "CNPJ": "02970363000185",
+    "realizada": "2025-03-21T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-21T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Heloisa Lorena Barroso",
+        "telefones": "32-9995-2611"
+      },
+      "monitor2": {
+        "nome": "Elcio Amorin Cardoso",
+        "telefones": "32-9922-2611"
+      }
+    }
+  },
+  {
+    "CNPJ": "01257931000132",
+    "realizada": "2025-03-20T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-20T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Heloisa Lorena Barroso",
+        "telefones": "32-9995-2611"
+      },
+      "monitor2": {
+        "nome": "Elcio Amorin Cardoso",
+        "telefones": "32-9922-2611"
+      }
+    }
+  },
+  {
+    "CNPJ": "17515115000200",
+    "realizada": "2025-03-19T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-19T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Heloisa Lorena Barroso",
+        "telefones": "32-9995-2611"
+      },
+      "monitor2": {
+        "nome": "Elcio Amorin Cardoso",
+        "telefones": "32-9922-2611"
+      }
+    }
+  },
+  {
+    "CNPJ": "48555775003760",
+    "realizada": "2025-03-25T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-25T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Heloisa Lorena Barroso",
+        "telefones": "32-9995-2611"
+      },
+      "monitor2": {
+        "nome": "Elcio Amorin Cardoso",
+        "telefones": "32-9922-2611"
+      }
+    }
+  },
+  {
+    "CNPJ": "20843801000126",
+    "realizada": "2025-03-18T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-18T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Heloisa Lorena Barroso",
+        "telefones": "32-9995-2611"
+      },
+      "monitor2": {
+        "nome": "Elcio Amorin Cardoso",
+        "telefones": "32-9922-2611"
+      }
+    }
+  },
+  {
+    "CNPJ": "05284121001289",
+    "realizada": "2025-02-17T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-17T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Ieda Favilla Gonçalves Jacintho",
+        "telefones": "21 98859-0171"
+      },
+      "monitor2": {
+        "nome": "Cacilda  de Fátima Fernandes da Silva",
+        "telefones": "21 97414-1582"
+      }
+    }
+  },
+  {
+    "CNPJ": "05284121001106",
+    "realizada": "2025-01-31T03:00:00.000Z",
+    "programada": {
+      "data": "2025-01-31T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Ieda Favilla Gonçalves Jacintho",
+        "telefones": "21 98859-0171"
+      },
+      "monitor2": {
+        "nome": "Cacilda  de Fátima Fernandes da Silva",
+        "telefones": "21 97414-1582"
+      }
+    }
+  },
+  {
+    "CNPJ": "05284121001360",
+    "realizada": "2025-01-30T03:00:00.000Z",
+    "programada": {
+      "data": "2025-01-30T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Ieda Favilla Gonçalves Jacintho",
+        "telefones": "21 98859-0171"
+      },
+      "monitor2": {
+        "nome": "Cacilda  de Fátima Fernandes da Silva",
+        "telefones": "21 97414-1582"
+      }
+    }
+  },
+  {
+    "CNPJ": "05284121000398",
+    "realizada": "2025-02-13T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-13T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Ieda Favilla Gonçalves Jacintho",
+        "telefones": "21 98859-0171"
+      },
+      "monitor2": {
+        "nome": "Cacilda  de Fátima Fernandes da Silva",
+        "telefones": "21 97414-1582"
+      }
+    }
+  },
+  {
+    "CNPJ": "28455418000102",
+    "realizada": "2025-02-03T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-03T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Ieda Favilla Gonçalves Jacintho",
+        "telefones": "21 98859-0171"
+      },
+      "monitor2": {
+        "nome": "Cacilda  de Fátima Fernandes da Silva",
+        "telefones": "21 97414-1582"
+      }
+    }
+  },
+  {
+    "CNPJ": "07568557000334",
+    "realizada": "2025-02-04T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-04T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Ieda Favilla Gonçalves Jacintho",
+        "telefones": "21 98859-0171"
+      },
+      "monitor2": {
+        "nome": "Cacilda  de Fátima Fernandes da Silva",
+        "telefones": "21 97414-1582"
+      }
+    }
+  },
+  {
+    "CNPJ": "05284121000711",
+    "realizada": "2025-02-05T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-05T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Ieda Favilla Gonçalves Jacintho",
+        "telefones": "21 98859-0171"
+      },
+      "monitor2": {
+        "nome": "Cacilda  de Fátima Fernandes da Silva",
+        "telefones": "21 97414-1582"
+      }
+    }
+  },
+  {
+    "CNPJ": "08872893000339",
+    "realizada": "2025-02-19T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-19T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Ieda Favilla Gonçalves Jacintho",
+        "telefones": "21 98859-0171"
+      },
+      "monitor2": {
+        "nome": "Cacilda  de Fátima Fernandes da Silva",
+        "telefones": "21 97414-1582"
+      }
+    }
+  },
+  {
+    "CNPJ": "18875409000117",
+    "realizada": "2025-02-06T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-06T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Ieda Favilla Gonçalves Jacintho",
+        "telefones": "21 98859-0171"
+      },
+      "monitor2": {
+        "nome": "Cacilda  de Fátima Fernandes da Silva",
+        "telefones": "21 97414-1582"
+      }
+    }
+  },
+  {
+    "CNPJ": "01856248000111",
+    "realizada": "2025-03-26T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-26T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Lia Buratto",
+        "telefones": "(11) 99250-9322"
+      },
+      "monitor2": {
+        "nome": "Erika Rodrigues Viana",
+        "telefones": "(11) 93902-1673"
+      }
+    }
+  },
+  {
+    "CNPJ": "00816354000290",
+    "realizada": "2025-03-10T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-10T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Lia Buratto",
+        "telefones": "(11) 99250-9322"
+      },
+      "monitor2": {
+        "nome": "Erika Rodrigues Viana",
+        "telefones": "(11) 93902-1673"
+      }
+    }
+  },
+  {
+    "CNPJ": "06134192000105",
+    "realizada": "2025-03-18T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-18T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Lia Buratto",
+        "telefones": "(11) 99250-9322"
+      },
+      "monitor2": {
+        "nome": "Erika Rodrigues Viana",
+        "telefones": "(11) 93902-1673"
+      }
+    }
+  },
+  {
+    "CNPJ": "07606902000468",
+    "realizada": "2025-03-06T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-06T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Lia Buratto",
+        "telefones": "(11) 99250-9322"
+      },
+      "monitor2": {
+        "nome": "Erika Rodrigues Viana",
+        "telefones": "(11) 93902-1673"
+      }
+    }
+  },
+  {
+    "CNPJ": "14757932000198",
+    "realizada": "2025-02-20T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-20T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Lia Buratto",
+        "telefones": "(11) 99250-9322"
+      },
+      "monitor2": {
+        "nome": "Erika Rodrigues Viana",
+        "telefones": "(11) 93902-1673"
+      }
+    }
+  },
+  {
+    "CNPJ": "33764944000194",
+    "realizada": "2025-02-18T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-18T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Lia Buratto",
+        "telefones": "(11) 99250-9322"
+      },
+      "monitor2": {
+        "nome": "Erika Rodrigues Viana",
+        "telefones": "(11) 93902-1673"
+      }
+    }
+  },
+  {
+    "CNPJ": "48555775006867",
+    "realizada": "2025-03-10T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-10T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Lia Buratto",
+        "telefones": "(11) 99250-9322"
+      },
+      "monitor2": {
+        "nome": "Erika Rodrigues Viana",
+        "telefones": "(11) 93902-1673"
+      }
+    }
+  },
+  {
+    "CNPJ": "09405431000293",
+    "realizada": "2025-03-26T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-26T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Lia Buratto",
+        "telefones": "(11) 99250-9322"
+      },
+      "monitor2": {
+        "nome": "Erika Rodrigues Viana",
+        "telefones": "(11) 93902-1673"
+      }
+    }
+  },
+  {
+    "CNPJ": "03578159000186",
+    "realizada": "2025-02-28T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-28T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Lia Buratto",
+        "telefones": "(11) 99250-9322"
+      },
+      "monitor2": {
+        "nome": "Erika Rodrigues Viana",
+        "telefones": "(11) 93902-1673"
+      }
+    }
+  },
+  {
+    "CNPJ": "09405431000102",
+    "realizada": "2025-03-24T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-24T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Lia Buratto",
+        "telefones": "(11) 99250-9322"
+      },
+      "monitor2": {
+        "nome": "Erika Rodrigues Viana",
+        "telefones": "(11) 93902-1673"
+      }
+    }
+  },
+  {
+    "CNPJ": "13876924000106",
+    "realizada": "2025-03-25T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-25T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Lia Buratto",
+        "telefones": "(11) 99250-9322"
+      },
+      "monitor2": {
+        "nome": "Erika Rodrigues Viana",
+        "telefones": "(11) 93902-1673"
+      }
+    }
+  },
+  {
+    "CNPJ": "15171442000259",
+    "realizada": "2025-02-27T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-27T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Lia Buratto",
+        "telefones": "(11) 99250-9322"
+      },
+      "monitor2": {
+        "nome": "Erika Rodrigues Viana",
+        "telefones": "(11) 93902-1673"
+      }
+    }
+  },
+  {
+    "CNPJ": "00761763000155",
+    "realizada": "2025-03-12T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-12T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Lia Buratto",
+        "telefones": "(11) 99250-9322"
+      },
+      "monitor2": {
+        "nome": "Erika Rodrigues Viana",
+        "telefones": "(11) 93902-1673"
+      }
+    }
+  },
+  {
+    "CNPJ": "03760446000374",
+    "realizada": "2025-02-21T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-21T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Lia Buratto",
+        "telefones": "(11) 99250-9322"
+      },
+      "monitor2": {
+        "nome": "Erika Rodrigues Viana",
+        "telefones": "(11) 93902-1673"
+      }
+    }
+  },
+  {
+    "CNPJ": "04844168000134",
+    "realizada": "2025-02-19T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-19T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Lia Buratto",
+        "telefones": "(11) 99250-9322"
+      },
+      "monitor2": {
+        "nome": "Erika Rodrigues Viana",
+        "telefones": "(11) 93902-1673"
+      }
+    }
+  },
+  {
+    "CNPJ": "05497233000165",
+    "realizada": "2025-02-11T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-11T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Lia Buratto",
+        "telefones": "(11) 99250-9322"
+      },
+      "monitor2": {
+        "nome": "Erika Rodrigues Viana",
+        "telefones": "(11) 93902-1673"
+      }
+    }
+  },
+  {
+    "CNPJ": "12641771000147",
+    "realizada": "2025-02-11T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-11T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Lia Buratto",
+        "telefones": "(11) 99250-9322"
+      },
+      "monitor2": {
+        "nome": "Erika Rodrigues Viana",
+        "telefones": "(11) 93902-1673"
+      }
+    }
+  },
+  {
+    "CNPJ": "14839086000155",
+    "realizada": "2025-03-06T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-06T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Lia Buratto",
+        "telefones": "(11) 99250-9322"
+      },
+      "monitor2": {
+        "nome": "Erika Rodrigues Viana",
+        "telefones": "(11) 93902-1673"
+      }
+    }
+  },
+  {
+    "CNPJ": "54924774000138",
+    "realizada": "2025-03-18T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-18T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Lia Buratto",
+        "telefones": "(11) 99250-9322"
+      },
+      "monitor2": {
+        "nome": "Erika Rodrigues Viana",
+        "telefones": "(11) 93902-1673"
+      }
+    }
+  },
+  {
+    "CNPJ": "67998161000197",
+    "realizada": "2025-02-26T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-26T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Lia Buratto",
+        "telefones": "(11) 99250-9322"
+      },
+      "monitor2": {
+        "nome": "Erika Rodrigues Viana",
+        "telefones": "(11) 93902-1673"
+      }
+    }
+  },
+  {
+    "CNPJ": "48555775011194",
+    "realizada": "2025-02-28T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-28T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Marcus Pierre Jardim dos Santos",
+        "telefones": "(16) 99371-6776"
+      },
+      "monitor2": {
+        "nome": "Henrique Santos Ferreira",
+        "telefones": "(16) 99779-2404"
+      }
+    }
+  },
+  {
+    "CNPJ": "48555775008215",
+    "realizada": "2025-03-14T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-14T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Marcus Pierre Jardim dos Santos",
+        "telefones": "(16) 99371-6776"
+      },
+      "monitor2": {
+        "nome": "Henrique Santos Ferreira",
+        "telefones": "(16) 99779-2404"
+      }
+    }
+  },
+  {
+    "CNPJ": "14561223000132",
+    "realizada": "2025-03-17T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-17T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Marcus Pierre Jardim dos Santos",
+        "telefones": "(16) 99371-6776"
+      },
+      "monitor2": {
+        "nome": "Henrique Santos Ferreira",
+        "telefones": "(16) 99779-2404"
+      }
+    }
+  },
+  {
+    "CNPJ": "13461216000104",
+    "realizada": "2025-03-18T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-18T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Marcus Pierre Jardim dos Santos",
+        "telefones": "(16) 99371-6776"
+      },
+      "monitor2": {
+        "nome": "Henrique Santos Ferreira",
+        "telefones": "(16) 99779-2404"
+      }
+    }
+  },
+  {
+    "CNPJ": "04490453000102",
+    "realizada": "2025-03-31T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-31T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Marlon Vinícius Alves de Araújo",
+        "telefones": "(21) 99749-6498"
+      },
+      "monitor2": {
+        "nome": "Jéssica Raposa Rocha",
+        "telefones": "(22) 99237-0711"
+      }
+    }
+  },
+  {
+    "CNPJ": "14945601000181",
+    "realizada": "2025-04-01T03:00:00.000Z",
+    "programada": {
+      "data": "2025-04-01T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Marlon Vinícius Alves de Araújo",
+        "telefones": "(21) 99749-6498"
+      },
+      "monitor2": {
+        "nome": "Jéssica Raposa Rocha",
+        "telefones": "(22) 99237-0711"
+      }
+    }
+  },
+  {
+    "CNPJ": "04327366000201",
+    "realizada": "2025-04-02T03:00:00.000Z",
+    "programada": {
+      "data": "2025-04-02T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Marlon Vinícius Alves de Araújo",
+        "telefones": "(21) 99749-6498"
+      },
+      "monitor2": {
+        "nome": "Jéssica Raposa Rocha",
+        "telefones": "(22) 99237-0711"
+      }
+    }
+  },
+  {
+    "CNPJ": "48555775007677",
+    "realizada": "2025-03-07T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-07T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Nilza Stein",
+        "telefones": "(41) 99906-3939"
+      },
+      "monitor2": {
+        "nome": "Mario Sergio Parra",
+        "telefones": "(43) 99917-6851"
+      }
+    }
+  },
+  {
+    "CNPJ": "48555775010970",
+    "realizada": "2025-02-17T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-17T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Nilza Stein",
+        "telefones": "(41) 99906-3939"
+      },
+      "monitor2": {
+        "nome": "Mario Sergio Parra",
+        "telefones": "(43) 99917-6851"
+      }
+    }
+  },
+  {
+    "CNPJ": "04807115000143",
+    "realizada": "2025-02-26T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-26T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Paula Monteiro de Siqueira",
+        "telefones": "(11) 96939-2451"
+      },
+      "monitor2": {
+        "nome": "Luciana Pena Morgado",
+        "telefones": "(11) 99239-6050"
+      }
+    }
+  },
+  {
+    "CNPJ": "17663544000217",
+    "realizada": "2025-02-26T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-26T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Paula Monteiro de Siqueira",
+        "telefones": "(11) 96939-2451"
+      },
+      "monitor2": {
+        "nome": "Luciana Pena Morgado",
+        "telefones": "(11) 99239-6050"
+      }
+    }
+  },
+  {
+    "CNPJ": "64033061001290",
+    "realizada": "2025-02-28T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-28T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Paula Monteiro de Siqueira",
+        "telefones": "(11) 96939-2451"
+      },
+      "monitor2": {
+        "nome": "Luciana Pena Morgado",
+        "telefones": "(11) 99239-6050"
+      }
+    }
+  },
+  {
+    "CNPJ": "09329759000278",
+    "realizada": "2025-03-07T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-07T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Paula Monteiro de Siqueira",
+        "telefones": "(11) 96939-2451"
+      },
+      "monitor2": {
+        "nome": "Luciana Pena Morgado",
+        "telefones": "(11) 99239-6050"
+      }
+    }
+  },
+  {
+    "CNPJ": "16996176000185",
+    "realizada": "2025-03-06T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-06T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Paula Monteiro de Siqueira",
+        "telefones": "(11) 96939-2451"
+      },
+      "monitor2": {
+        "nome": "Luciana Pena Morgado",
+        "telefones": "(11) 99239-6050"
+      }
+    }
+  },
+  {
+    "CNPJ": "17120979000134",
+    "realizada": "2025-03-11T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-11T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Paula Monteiro de Siqueira",
+        "telefones": "(11) 96939-2451"
+      },
+      "monitor2": {
+        "nome": "Luciana Pena Morgado",
+        "telefones": "(11) 99239-6050"
+      }
+    }
+  },
+  {
+    "CNPJ": "50068188000188",
+    "realizada": "2025-02-13T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-13T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Paula Monteiro de Siqueira",
+        "telefones": "(11) 96939-2451"
+      },
+      "monitor2": {
+        "nome": "Luciana Pena Morgado",
+        "telefones": "(11) 99239-6050"
+      }
+    }
+  },
+  {
+    "CNPJ": "19977803000129",
+    "realizada": "2025-02-14T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-14T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Paula Monteiro de Siqueira",
+        "telefones": "(11) 96939-2451"
+      },
+      "monitor2": {
+        "nome": "Luciana Pena Morgado",
+        "telefones": "(11) 99239-6050"
+      }
+    }
+  },
+  {
+    "CNPJ": "03796285000107",
+    "realizada": "2025-03-11T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-11T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Paula Monteiro de Siqueira",
+        "telefones": "(11) 96939-2451"
+      },
+      "monitor2": {
+        "nome": "Luciana Pena Morgado",
+        "telefones": "(11) 99239-6050"
+      }
+    }
+  },
+  {
+    "CNPJ": "10321049000280",
+    "realizada": "2024-02-06T03:00:00.000Z",
+    "programada": {
+      "data": "2024-02-06T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Reinaldo Barbosa de Azevedo",
+        "telefones": "(21) 96584-0800"
+      },
+      "monitor2": {
+        "nome": "Roberto Miranda Pimentel Fully",
+        "telefones": "(33) 9191-2026"
+      }
+    }
+  },
+  {
+    "CNPJ": "04407012000196",
+    "realizada": "2025-03-18T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-18T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Thamiris Lucchin",
+        "telefones": "41 9950-6859"
+      },
+      "monitor2": {
+        "nome": "Luciano Pires Filho",
+        "telefones": "41 9198-5793"
+      }
+    }
+  },
+  {
+    "CNPJ": "12628473000117",
+    "realizada": "2025-03-19T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-19T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Thamiris Lucchin",
+        "telefones": "41 9950-6859"
+      },
+      "monitor2": {
+        "nome": "Luciano Pires Filho",
+        "telefones": "41 9198-5793"
+      }
+    }
+  }
+]

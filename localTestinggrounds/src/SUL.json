@@ -1,0 +1,1487 @@
+[
+  {
+    "CNPJ": "03037499000108",
+    "realizada": "2025-02-24T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-24T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Cauã dos Santos Guido",
+        "telefones": "(18) 99727-7301"
+      },
+      "monitor2": {
+        "nome": "Roberta Guimarães",
+        "telefones": "(54) 99953-9324"
+      }
+    }
+  },
+  {
+    "CNPJ": "17277508000134",
+    "realizada": "2025-02-06T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-06T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Cauã dos Santos Guido",
+        "telefones": "(18) 99727-7301"
+      },
+      "monitor2": {
+        "nome": "Roberta Guimarães",
+        "telefones": "(54) 99953-9324"
+      }
+    }
+  },
+  {
+    "CNPJ": "48555775003507",
+    "realizada": "2025-02-06T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-06T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Cauã dos Santos Guido",
+        "telefones": "(18) 99727-7301"
+      },
+      "monitor2": {
+        "nome": "Roberta Guimarães",
+        "telefones": "(54) 99953-9324"
+      }
+    }
+  },
+  {
+    "CNPJ": "10874797000290",
+    "realizada": "2025-02-11T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-11T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Cauã dos Santos Guido",
+        "telefones": "(18) 99727-7301"
+      },
+      "monitor2": {
+        "nome": "Roberta Guimarães",
+        "telefones": "(54) 99953-9324"
+      }
+    }
+  },
+  {
+    "CNPJ": "02166382000153",
+    "realizada": "2025-02-25T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-25T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Cauã dos Santos Guido",
+        "telefones": "(18) 99727-7301"
+      },
+      "monitor2": {
+        "nome": "Roberta Guimarães",
+        "telefones": "(54) 99953-9324"
+      }
+    }
+  },
+  {
+    "CNPJ": "02457215000838",
+    "realizada": "2025-02-07T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-07T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Cauã dos Santos Guido",
+        "telefones": "(18) 99727-7301"
+      },
+      "monitor2": {
+        "nome": "Roberta Guimarães",
+        "telefones": "(54) 99953-9324"
+      }
+    }
+  },
+  {
+    "CNPJ": "05366113000129",
+    "realizada": "2025-03-11T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-11T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Cauã dos Santos Guido",
+        "telefones": "(18) 99727-7301"
+      },
+      "monitor2": {
+        "nome": "Roberta Guimarães",
+        "telefones": "(54) 99953-9324"
+      }
+    }
+  },
+  {
+    "CNPJ": "05366113000200",
+    "realizada": "2025-03-10T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-10T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Cauã dos Santos Guido",
+        "telefones": "(18) 99727-7301"
+      },
+      "monitor2": {
+        "nome": "Roberta Guimarães",
+        "telefones": "(54) 99953-9324"
+      }
+    }
+  },
+  {
+    "CNPJ": "05366113000390",
+    "realizada": "2025-02-05T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-05T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Cauã dos Santos Guido",
+        "telefones": "(18) 99727-7301"
+      },
+      "monitor2": {
+        "nome": "Roberta Guimarães",
+        "telefones": "(54) 99953-9324"
+      }
+    }
+  },
+  {
+    "CNPJ": "05366113000471",
+    "realizada": "2025-03-10T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-10T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Cauã dos Santos Guido",
+        "telefones": "(18) 99727-7301"
+      },
+      "monitor2": {
+        "nome": "Roberta Guimarães",
+        "telefones": "(54) 99953-9324"
+      }
+    }
+  },
+  {
+    "CNPJ": "10498134000138",
+    "realizada": "2025-02-27T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-27T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Cauã dos Santos Guido",
+        "telefones": "(18) 99727-7301"
+      },
+      "monitor2": {
+        "nome": "Roberta Guimarães",
+        "telefones": "(54) 99953-9324"
+      }
+    }
+  },
+  {
+    "CNPJ": "17099432000102",
+    "realizada": "2025-02-06T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-06T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Cauã dos Santos Guido",
+        "telefones": "(18) 99727-7301"
+      },
+      "monitor2": {
+        "nome": "Roberta Guimarães",
+        "telefones": "(54) 99953-9324"
+      }
+    }
+  },
+  {
+    "CNPJ": "02011065000249",
+    "realizada": "2025-02-17T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-17T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Cauã dos Santos Guido",
+        "telefones": "(18) 99727-7301"
+      },
+      "monitor2": {
+        "nome": "Roberta Guimarães",
+        "telefones": "(54) 99953-9324"
+      }
+    }
+  },
+  {
+    "CNPJ": "11722291000148",
+    "realizada": "2025-02-17T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-17T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Cauã dos Santos Guido",
+        "telefones": "(18) 99727-7301"
+      },
+      "monitor2": {
+        "nome": "Roberta Guimarães",
+        "telefones": "(54) 99953-9324"
+      }
+    }
+  },
+  {
+    "CNPJ": "11722291000229",
+    "realizada": "2025-02-18T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-18T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Cauã dos Santos Guido",
+        "telefones": "(18) 99727-7301"
+      },
+      "monitor2": {
+        "nome": "Roberta Guimarães",
+        "telefones": "(54) 99953-9324"
+      }
+    }
+  },
+  {
+    "CNPJ": "05752920000341",
+    "realizada": "2025-02-06T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-06T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "97134480000115",
+    "realizada": "2025-02-06T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-06T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "15327928000152",
+    "realizada": "2025-02-05T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-05T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "02457215000161",
+    "realizada": "2025-02-10T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-10T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "02457215001303",
+    "realizada": "2025-02-07T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-07T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "91693549000679",
+    "realizada": "2025-02-14T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-14T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "30467024000388",
+    "realizada": "2025-02-11T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-11T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "10470137000325",
+    "realizada": "2025-03-11T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-11T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "00065945000272",
+    "realizada": "2025-03-18T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-18T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "03602165000121",
+    "realizada": "2025-03-19T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-19T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "33260542000152",
+    "realizada": "2025-02-12T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-12T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "09651333000155",
+    "realizada": "2025-02-19T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-19T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "11730153000100",
+    "realizada": "2025-03-06T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-06T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "01493413000207",
+    "realizada": "2025-02-21T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-21T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "07998862000366",
+    "realizada": "2025-02-24T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-24T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "05752920000694",
+    "realizada": "2025-03-20T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-20T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "32883938000193",
+    "realizada": "2025-03-21T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-21T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "00711166000116",
+    "realizada": "2025-03-24T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-24T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "00923426000117",
+    "realizada": "2025-02-28T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-28T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "02366729000101",
+    "realizada": "2025-03-14T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-14T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "02746194000102",
+    "realizada": "2025-02-18T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-18T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "03880767000140",
+    "realizada": "2025-02-24T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-24T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "08503688000134",
+    "realizada": "2025-02-27T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-27T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "08922739000243",
+    "realizada": "2025-03-07T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-07T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "11045589000160",
+    "realizada": "2025-03-25T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-25T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "11217234000101",
+    "realizada": "2025-03-10T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-10T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "19446372000174",
+    "realizada": "2025-02-25T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-25T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "28076623000167",
+    "realizada": "2025-03-13T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-13T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "92238138004139",
+    "realizada": "2025-03-17T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-17T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "92873967000287",
+    "realizada": "2025-03-18T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-18T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Jeferson Bossoni Mendes",
+        "telefones": "(51) 98112-3527"
+      },
+      "monitor2": {
+        "nome": "Eduardo Bonis do Nascimento",
+        "telefones": "(51) 99340-1050"
+      }
+    }
+  },
+  {
+    "CNPJ": "08581190000190",
+    "realizada": "2025-02-06T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-06T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Nilza Stein",
+        "telefones": "(41) 99906-3939"
+      },
+      "monitor2": {
+        "nome": "Mario Sergio Parra",
+        "telefones": "(43) 99917-6851"
+      }
+    }
+  },
+  {
+    "CNPJ": "15182536000142",
+    "realizada": "2025-02-06T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-06T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Nilza Stein",
+        "telefones": "(41) 99906-3939"
+      },
+      "monitor2": {
+        "nome": "Mario Sergio Parra",
+        "telefones": "(43) 99917-6851"
+      }
+    }
+  },
+  {
+    "CNPJ": "48555775006786",
+    "realizada": "2025-02-05T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-05T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Nilza Stein",
+        "telefones": "(41) 99906-3939"
+      },
+      "monitor2": {
+        "nome": "Mario Sergio Parra",
+        "telefones": "(43) 99917-6851"
+      }
+    }
+  },
+  {
+    "CNPJ": "78312188000281",
+    "realizada": "2025-02-03T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-03T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Nilza Stein",
+        "telefones": "(41) 99906-3939"
+      },
+      "monitor2": {
+        "nome": "Mario Sergio Parra",
+        "telefones": "(43) 99917-6851"
+      }
+    }
+  },
+  {
+    "CNPJ": "00816354000451",
+    "realizada": "2025-02-18T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-18T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Nilza Stein",
+        "telefones": "(41) 99906-3939"
+      },
+      "monitor2": {
+        "nome": "Mario Sergio Parra",
+        "telefones": "(43) 99917-6851"
+      }
+    }
+  },
+  {
+    "CNPJ": "38348069000183",
+    "realizada": "2025-02-13T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-13T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Nilza Stein",
+        "telefones": "(41) 99906-3939"
+      },
+      "monitor2": {
+        "nome": "Mario Sergio Parra",
+        "telefones": "(43) 99917-6851"
+      }
+    }
+  },
+  {
+    "CNPJ": "78194974000140",
+    "realizada": "2025-02-12T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-12T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Nilza Stein",
+        "telefones": "(41) 99906-3939"
+      },
+      "monitor2": {
+        "nome": "Mario Sergio Parra",
+        "telefones": "(43) 99917-6851"
+      }
+    }
+  },
+  {
+    "CNPJ": "78674702000148",
+    "realizada": "2025-02-14T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-14T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Nilza Stein",
+        "telefones": "(41) 99906-3939"
+      },
+      "monitor2": {
+        "nome": "Mario Sergio Parra",
+        "telefones": "(43) 99917-6851"
+      }
+    }
+  },
+  {
+    "CNPJ": "04690777000186",
+    "realizada": "2025-02-26T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-26T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Nilza Stein",
+        "telefones": "(41) 99906-3939"
+      },
+      "monitor2": {
+        "nome": "Mario Sergio Parra",
+        "telefones": "(43) 99917-6851"
+      }
+    }
+  },
+  {
+    "CNPJ": "17833040000117",
+    "realizada": "2025-02-24T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-24T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Nilza Stein",
+        "telefones": "(41) 99906-3939"
+      },
+      "monitor2": {
+        "nome": "Mario Sergio Parra",
+        "telefones": "(43) 99917-6851"
+      }
+    }
+  },
+  {
+    "CNPJ": "26999838000124",
+    "realizada": "2025-02-07T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-07T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Nilza Stein",
+        "telefones": "(41) 99906-3939"
+      },
+      "monitor2": {
+        "nome": "Mario Sergio Parra",
+        "telefones": "(43) 99917-6851"
+      }
+    }
+  },
+  {
+    "CNPJ": "10340470000158",
+    "realizada": "2025-02-19T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-19T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Nilza Stein",
+        "telefones": "(41) 99906-3939"
+      },
+      "monitor2": {
+        "nome": "Mario Sergio Parra",
+        "telefones": "(43) 99917-6851"
+      }
+    }
+  },
+  {
+    "CNPJ": "02300137000197",
+    "realizada": "2025-03-12T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-12T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Thamiris Lucchin",
+        "telefones": "41 9950-6859"
+      },
+      "monitor2": {
+        "nome": "Luciano Pires Filho",
+        "telefones": "41 9198-5793"
+      }
+    }
+  },
+  {
+    "CNPJ": "04309546000180",
+    "realizada": "2025-02-21T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-21T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Thamiris Lucchin",
+        "telefones": "41 9950-6859"
+      },
+      "monitor2": {
+        "nome": "Luciano Pires Filho",
+        "telefones": "41 9198-5793"
+      }
+    }
+  },
+  {
+    "CNPJ": "02300137001401",
+    "realizada": "2025-03-07T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-07T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Thamiris Lucchin",
+        "telefones": "41 9950-6859"
+      },
+      "monitor2": {
+        "nome": "Luciano Pires Filho",
+        "telefones": "41 9198-5793"
+      }
+    }
+  },
+  {
+    "CNPJ": "12931529000108",
+    "realizada": "2025-02-28T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-28T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Thamiris Lucchin",
+        "telefones": "41 9950-6859"
+      },
+      "monitor2": {
+        "nome": "Luciano Pires Filho",
+        "telefones": "41 9198-5793"
+      }
+    }
+  },
+  {
+    "CNPJ": "23678050000128",
+    "realizada": "2025-03-11T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-11T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Thamiris Lucchin",
+        "telefones": "41 9950-6859"
+      },
+      "monitor2": {
+        "nome": "Luciano Pires Filho",
+        "telefones": "41 9198-5793"
+      }
+    }
+  },
+  {
+    "CNPJ": "05891430000164",
+    "realizada": "2025-02-06T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-06T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Victor Munhoz da Rocha",
+        "telefones": "(41) 99918-2942"
+      },
+      "monitor2": {
+        "nome": "Lucas Santos de Souza",
+        "telefones": "(41) 98713-8080"
+      }
+    }
+  },
+  {
+    "CNPJ": "02011065000168",
+    "realizada": "2025-02-14T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-14T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Victor Munhoz da Rocha",
+        "telefones": "(41) 99918-2942"
+      },
+      "monitor2": {
+        "nome": "Lucas Santos de Souza",
+        "telefones": "(41) 98713-8080"
+      }
+    }
+  },
+  {
+    "CNPJ": "05752920000260",
+    "realizada": "2025-03-21T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-21T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Victor Munhoz da Rocha",
+        "telefones": "(41) 99918-2942"
+      },
+      "monitor2": {
+        "nome": "Lucas Santos de Souza",
+        "telefones": "(41) 98713-8080"
+      }
+    }
+  },
+  {
+    "CNPJ": "13959203000151",
+    "realizada": "2025-02-03T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-03T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Victor Munhoz da Rocha",
+        "telefones": "(41) 99918-2942"
+      },
+      "monitor2": {
+        "nome": "Lucas Santos de Souza",
+        "telefones": "(41) 98713-8080"
+      }
+    }
+  },
+  {
+    "CNPJ": "77620920000137",
+    "realizada": "2025-02-19T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-19T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Victor Munhoz da Rocha",
+        "telefones": "(41) 99918-2942"
+      },
+      "monitor2": {
+        "nome": "Lucas Santos de Souza",
+        "telefones": "(41) 98713-8080"
+      }
+    }
+  },
+  {
+    "CNPJ": "80511280000131",
+    "realizada": "2025-03-14T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-14T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Victor Munhoz da Rocha",
+        "telefones": "(41) 99918-2942"
+      },
+      "monitor2": {
+        "nome": "Lucas Santos de Souza",
+        "telefones": "(41) 98713-8080"
+      }
+    }
+  },
+  {
+    "CNPJ": "81395253000103",
+    "realizada": "2025-02-07T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-07T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Victor Munhoz da Rocha",
+        "telefones": "(41) 99918-2942"
+      },
+      "monitor2": {
+        "nome": "Lucas Santos de Souza",
+        "telefones": "(41) 98713-8080"
+      }
+    }
+  },
+  {
+    "CNPJ": "00077234000137",
+    "realizada": "2025-03-17T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-17T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Victor Munhoz da Rocha",
+        "telefones": "(41) 99918-2942"
+      },
+      "monitor2": {
+        "nome": "Lucas Santos de Souza",
+        "telefones": "(41) 98713-8080"
+      }
+    }
+  },
+  {
+    "CNPJ": "07101500000169",
+    "realizada": "2025-02-21T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-21T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Victor Munhoz da Rocha",
+        "telefones": "(41) 99918-2942"
+      },
+      "monitor2": {
+        "nome": "Lucas Santos de Souza",
+        "telefones": "(41) 98713-8080"
+      }
+    }
+  },
+  {
+    "CNPJ": "18586371000162",
+    "realizada": "2025-03-18T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-18T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Victor Munhoz da Rocha",
+        "telefones": "(41) 99918-2942"
+      },
+      "monitor2": {
+        "nome": "Lucas Santos de Souza",
+        "telefones": "(41) 98713-8080"
+      }
+    }
+  },
+  {
+    "CNPJ": "30181780000184",
+    "realizada": "2025-03-07T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-07T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Victor Munhoz da Rocha",
+        "telefones": "(41) 99918-2942"
+      },
+      "monitor2": {
+        "nome": "Lucas Santos de Souza",
+        "telefones": "(41) 98713-8080"
+      }
+    }
+  },
+  {
+    "CNPJ": "00816354000966",
+    "realizada": "2025-01-31T03:00:00.000Z",
+    "programada": {
+      "data": "2025-01-31T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Werner Martins",
+        "telefones": "(48) 98835-4949"
+      },
+      "monitor2": {
+        "nome": "Caíque Espezim Pacheco",
+        "telefones": "(48) 99902-4342"
+      }
+    }
+  },
+  {
+    "CNPJ": "48555775002608",
+    "realizada": "2025-02-06T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-06T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Werner Martins",
+        "telefones": "(48) 98835-4949"
+      },
+      "monitor2": {
+        "nome": "Caíque Espezim Pacheco",
+        "telefones": "(48) 99902-4342"
+      }
+    }
+  },
+  {
+    "CNPJ": "09505468000102",
+    "realizada": "2025-02-07T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-07T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Werner Martins",
+        "telefones": "(48) 98835-4949"
+      },
+      "monitor2": {
+        "nome": "Caíque Espezim Pacheco",
+        "telefones": "(48) 99902-4342"
+      }
+    }
+  },
+  {
+    "CNPJ": "13416626000125",
+    "realizada": "2025-02-20T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-20T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Werner Martins",
+        "telefones": "(48) 98835-4949"
+      },
+      "monitor2": {
+        "nome": "Caíque Espezim Pacheco",
+        "telefones": "(48) 99902-4342"
+      }
+    }
+  },
+  {
+    "CNPJ": "00129000000277",
+    "realizada": "2025-02-04T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-04T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Werner Martins",
+        "telefones": "(48) 98835-4949"
+      },
+      "monitor2": {
+        "nome": "Caíque Espezim Pacheco",
+        "telefones": "(48) 99902-4342"
+      }
+    }
+  },
+  {
+    "CNPJ": "04981194000104",
+    "realizada": "2025-02-06T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-06T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Werner Martins",
+        "telefones": "(48) 98835-4949"
+      },
+      "monitor2": {
+        "nome": "Caíque Espezim Pacheco",
+        "telefones": "(48) 99902-4342"
+      }
+    }
+  },
+  {
+    "CNPJ": "10197909000135",
+    "realizada": "2025-02-14T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-14T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Werner Martins",
+        "telefones": "(48) 98835-4949"
+      },
+      "monitor2": {
+        "nome": "Caíque Espezim Pacheco",
+        "telefones": "(48) 99902-4342"
+      }
+    }
+  },
+  {
+    "CNPJ": "14587665000158",
+    "realizada": "2025-02-10T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-10T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Werner Martins",
+        "telefones": "(48) 98835-4949"
+      },
+      "monitor2": {
+        "nome": "Caíque Espezim Pacheco",
+        "telefones": "(48) 99902-4342"
+      }
+    }
+  },
+  {
+    "CNPJ": "14742538000186",
+    "realizada": "2025-02-17T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-17T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Werner Martins",
+        "telefones": "(48) 98835-4949"
+      },
+      "monitor2": {
+        "nome": "Caíque Espezim Pacheco",
+        "telefones": "(48) 99902-4342"
+      }
+    }
+  },
+  {
+    "CNPJ": "16803838000153",
+    "realizada": "2025-02-18T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-18T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Werner Martins",
+        "telefones": "(48) 98835-4949"
+      },
+      "monitor2": {
+        "nome": "Caíque Espezim Pacheco",
+        "telefones": "(48) 99902-4342"
+      }
+    }
+  },
+  {
+    "CNPJ": "29133334000115",
+    "realizada": "2025-02-18T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-18T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Werner Martins",
+        "telefones": "(48) 98835-4949"
+      },
+      "monitor2": {
+        "nome": "Caíque Espezim Pacheco",
+        "telefones": "(48) 99902-4342"
+      }
+    }
+  },
+  {
+    "CNPJ": "09628341000180",
+    "realizada": "2025-02-20T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-20T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Werner Martins",
+        "telefones": "(48) 98835-4949"
+      },
+      "monitor2": {
+        "nome": "Caíque Espezim Pacheco",
+        "telefones": "(48) 99902-4342"
+      }
+    }
+  },
+  {
+    "CNPJ": "79372108000165",
+    "realizada": "2025-02-11T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-11T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Werner Martins",
+        "telefones": "(48) 98835-4949"
+      },
+      "monitor2": {
+        "nome": "Caíque Espezim Pacheco",
+        "telefones": "(48) 99902-4342"
+      }
+    }
+  },
+  {
+    "CNPJ": "79372108000670",
+    "realizada": "2025-02-13T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-13T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Werner Martins",
+        "telefones": "(48) 98835-4949"
+      },
+      "monitor2": {
+        "nome": "Caíque Espezim Pacheco",
+        "telefones": "(48) 99902-4342"
+      }
+    }
+  },
+  {
+    "CNPJ": "01488959000180",
+    "realizada": "2025-03-12T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-12T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Werner Martins",
+        "telefones": "(48) 98835-4949"
+      },
+      "monitor2": {
+        "nome": "Caíque Espezim Pacheco",
+        "telefones": "(48) 99902-4342"
+      }
+    }
+  },
+  {
+    "CNPJ": "03002855000140",
+    "realizada": "2025-03-13T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-13T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Werner Martins",
+        "telefones": "(48) 98835-4949"
+      },
+      "monitor2": {
+        "nome": "Caíque Espezim Pacheco",
+        "telefones": "(48) 99902-4342"
+      }
+    }
+  },
+  {
+    "CNPJ": "92401819000189",
+    "realizada": "2025-03-14T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-14T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Werner Martins",
+        "telefones": "(48) 98835-4949"
+      },
+      "monitor2": {
+        "nome": "Caíque Espezim Pacheco",
+        "telefones": "(48) 99902-4342"
+      }
+    }
+  },
+  {
+    "CNPJ": "92401819000260",
+    "realizada": "2025-03-14T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-14T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Werner Martins",
+        "telefones": "(48) 98835-4949"
+      },
+      "monitor2": {
+        "nome": "Caíque Espezim Pacheco",
+        "telefones": "(48) 99902-4342"
+      }
+    }
+  },
+  {
+    "CNPJ": "92401819000340",
+    "realizada": "2025-03-13T03:00:00.000Z",
+    "programada": {
+      "data": "2025-03-13T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Werner Martins",
+        "telefones": "(48) 98835-4949"
+      },
+      "monitor2": {
+        "nome": "Caíque Espezim Pacheco",
+        "telefones": "(48) 99902-4342"
+      }
+    }
+  },
+  {
+    "CNPJ": "02000030000123",
+    "realizada": "2025-02-24T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-24T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Werner Martins",
+        "telefones": "(48) 98835-4949"
+      },
+      "monitor2": {
+        "nome": "Caíque Espezim Pacheco",
+        "telefones": "(48) 99902-4342"
+      }
+    }
+  },
+  {
+    "CNPJ": "03998197000600",
+    "realizada": "2025-02-24T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-24T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Werner Martins",
+        "telefones": "(48) 98835-4949"
+      },
+      "monitor2": {
+        "nome": "Caíque Espezim Pacheco",
+        "telefones": "(48) 99902-4342"
+      }
+    }
+  },
+  {
+    "CNPJ": "05510658000329",
+    "realizada": "2025-02-25T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-25T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Werner Martins",
+        "telefones": "(48) 98835-4949"
+      },
+      "monitor2": {
+        "nome": "Caíque Espezim Pacheco",
+        "telefones": "(48) 99902-4342"
+      }
+    }
+  },
+  {
+    "CNPJ": "81140360000190",
+    "realizada": "2025-02-26T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-26T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Werner Martins",
+        "telefones": "(48) 98835-4949"
+      },
+      "monitor2": {
+        "nome": "Caíque Espezim Pacheco",
+        "telefones": "(48) 99902-4342"
+      }
+    }
+  },
+  {
+    "CNPJ": "01266353000109",
+    "realizada": "2025-02-26T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-26T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Werner Martins",
+        "telefones": "(48) 98835-4949"
+      },
+      "monitor2": {
+        "nome": "Caíque Espezim Pacheco",
+        "telefones": "(48) 99902-4342"
+      }
+    }
+  },
+  {
+    "CNPJ": "10283625000161",
+    "realizada": "2025-02-21T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-21T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Werner Martins",
+        "telefones": "(48) 98835-4949"
+      },
+      "monitor2": {
+        "nome": "Caíque Espezim Pacheco",
+        "telefones": "(48) 99902-4342"
+      }
+    }
+  },
+  {
+    "CNPJ": "79372108000408",
+    "realizada": "2025-02-25T03:00:00.000Z",
+    "programada": {
+      "data": "2025-02-25T03:00:00.000Z",
+      "monitor1": {
+        "nome": "Werner Martins",
+        "telefones": "(48) 98835-4949"
+      },
+      "monitor2": {
+        "nome": "Caíque Espezim Pacheco",
+        "telefones": "(48) 99902-4342"
+      }
+    }
+  }
+]
