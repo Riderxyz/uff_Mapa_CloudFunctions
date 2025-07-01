@@ -1,27 +1,28 @@
 {
-  "name": "typescript-nodemon-pagarme",
+  "name": "typescript-nodemon",
   "version": "1.0.0",
-  "description": "Boilerplate project to run TypeScript with nodemon and pagar.me npm package.",
+  "description": "Boilerplate project to run TypeScript with nodemon npm package.",
   "main": "dist/index.js",
   "scripts": {
     "start": "nodemon --watch src --exec ts-node src/index.ts",
-    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec ts-node src/index.ts",
     "build": "tsc"
   },
   "dependencies": {
     "@types/cli-progress": "^3.11.6",
-    "axios": "^1.7.9",
+    "axios": "^1.10.0",
     "cli-progress": "^3.12.0",
-    "firebase-admin": "^13.0.2",
+    "firebase-admin": "^13.4.0",
     "fs-extra": "^11.3.0",
-    "mercadopago": "^2.3.0",
-    "xlsx": "^0.18.5"
+    "rxjs": "^7.8.2",
+    "xml2js": "^0.6.2"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^20.8.0",
-    "nodemon": "^3.1.9",
+    "@types/node": "^24.0.8",
+    "@types/xml2js": "^0.4.14",
+    "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.3"
+    "typescript": "^5.8.3"
   }
 }
