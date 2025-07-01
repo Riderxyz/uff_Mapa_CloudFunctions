@@ -1,18 +1,13 @@
-import { onObjectFinalized } from "firebase-functions/v2/storage";
-import { onRequest } from "firebase-functions/v2/https";
+/* import { onRequest } from "firebase-functions/v2/https"; */
 import { initializeApp } from "firebase-admin/app";
-import { getStorage } from "firebase-admin/storage";
-import * as fs from "fs";
-import * as path from "path";
-import * as logger from "firebase-functions/logger";
-import * as os from "os";
-import Busboy from "busboy";
 import { onSchedule } from "firebase-functions/scheduler";
+import { atualizandoProgramacao } from "./atualizadores/programacao";
 
 // Inicializa o Firebase Admin SDK
 initializeApp();
 
 
-export const atualizarDados = onSchedule('0 */2 * * 1-5', async (event) => {
-
+export const atualizarDados = onSchedule('0 */1 * * 1-5', async (event) => {
+ const result = await atualizandoProgramacao();
+    console.log("Resultado:", result);
 })
