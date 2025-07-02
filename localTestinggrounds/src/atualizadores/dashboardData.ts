@@ -1,17 +1,22 @@
-import { ProgramacaoInterface } from "./../interface/programacao.interface";
 import * as admin from "firebase-admin";
-import { CloudFunctionResponse } from "../interface/cloudFunctionResponse.interface";
 import { combineLatest, from, map } from "rxjs";
-import { StatusInterface } from "../interface/status.interface";
+import { lastValueFrom } from "rxjs";
+
+import { CloudFunctionResponse } from "../interface/cloudFunctionResponse.interface";
 import { EntidadesInterface } from "../interface/entidade.interface";
+import { ProgramacaoInterface } from "../interface/programacao.interface";
 import { VisitasInterface } from "../interface/visitas.interface";
-import { RegiaoBrasilNomeEnum, StatusName } from "../interface/enums";
-import { DashboardStats, PercentualPorRegiao } from "../interface/dashboard.interface";
+import { StatusInterface } from "../interface/status.interface";
+import {
+  DashboardStats,
+  PercentualPorRegiao,
+} from "../interface/dashboard.interface";
+import { StatusName, RegiaoBrasilNomeEnum } from "../interface/enums";
+
 interface StatusGroup {
   status: StatusName;
   count: number;
 }
-
 
 interface MonitorPerformance {
   monitor: string;
@@ -26,94 +31,72 @@ export const atualizandoDashboardData =
       console.log("🔄 Iniciando a atualização do Dashboard Data...");
 
       const firestore = admin.firestore();
-      const dashboardDataRef = firestore.collection("dashboard_data");
-      const entidadesSnapshot = from(firestore.collection("entidade_v3").get());
-      const programacaoSnapshot = from(
+
+      const entidades$ = from(firestore.collection("entidade_v3").get());
+      const programacoes$ = from(
         firestore
           .collection("programacao_v3")
           .where("fase_pesquisa", "==", "2025-2")
           .get()
       );
-      const visitasSnapshot = from(
+      const visitas$ = from(
         firestore
           .collection("visitas_v3")
           .where("fase_pesquisa", "==", "2025-2")
           .get()
       );
-      const statusSnapshot = from(firestore.collection("list_status_v3").get());
-      programacaoSnapshot.forEach((doc) => {
-        const data = doc;
-        console.log(data.docs[0].data());
-      });
+      const status$ = from(firestore.collection("list_status_v3").get());
 
       const stats$ = combineLatest([
-        entidadesSnapshot,
-        programacaoSnapshot,
-        visitasSnapshot,
-        statusSnapshot,
+        entidades$,
+        programacoes$,
+        visitas$,
+        status$,
       ]).pipe(
-        map(
-          ([
-            entidadesSnapshotResponse,
-            programacoesSnapshotResponse,
-            visitasSnapshotResponse,
-            statusListSnapshotResponse,
-          ]) => {
-            console.log("📊 Dados combinados:");
-            console.log("Entidades:", entidadesSnapshotResponse.size);
-            console.log("Programações:", programacoesSnapshotResponse.size);
-            console.log("Visitas:", visitasSnapshotResponse.size);
-            console.log("Status:", statusListSnapshotResponse.size);
+        map(([entidadesSnap, programacoesSnap, visitasSnap, statusSnap]) => {
+          const entidadesArr = entidadesSnap.docs.map(
+            (doc) => doc.data() as EntidadesInterface
+          );
+          const programacoesArr = programacoesSnap.docs.map(
+            (doc) => doc.data() as ProgramacaoInterface
+          );
+          const visitasArr = visitasSnap.docs.map(
+            (doc) => doc.data() as VisitasInterface
+          );
+          const statusArr = statusSnap.docs.map(
+            (doc) => doc.data() as StatusInterface
+          );
 
-            const entidadesArr: EntidadesInterface[] =
-              entidadesSnapshotResponse.docs.map(
-                (doc) => doc.data() as EntidadesInterface
-              );
+          const statusMap = mapearStatusPorCnpj(statusArr);
 
-            const programacoesArr: ProgramacaoInterface[] =
-              programacoesSnapshotResponse.docs.map(
-                (doc) => doc.data() as ProgramacaoInterface // Ajuste o tipo conforme necessário
-              );
-            const visitasArr: VisitasInterface[] =
-              visitasSnapshotResponse.docs.map(
-                (doc) => doc.data() as VisitasInterface // Ajuste o tipo conforme necessário
-              );
+          const metrics = calculateAllMetrics(entidadesArr, visitasArr);
+          const percentualPorRegiao = calcularPercentualPorRegiao(entidadesArr);
+          const monitorPerformance = calcularPerformancePorMonitor(
+            programacoesArr,
+            visitasArr
+          );
+          const entidadesPorStatus = agruparEntidadesPorStatus(entidadesArr);
 
-            const statusArr: StatusInterface[] =
-              statusListSnapshotResponse.docs.map(
-                (doc) => doc.data() as StatusInterface
-              );
-
-            const statusMap = mapearStatusPorCnpj(statusArr);
-
-            const metrics = calculateAllMetrics(entidadesArr, visitasArr);
-            const percentualPorRegiao =
-              calcularPercentualPorRegiao(entidadesArr);
-              const monitorPerformance = calcularPerformancePorMonitor(
-                programacoesArr, visitasArr
-              )
-
-              const retorno = {
-              entidadesArr,
-              ...metrics,
-              entidadesPorStatus: agruparEntidadesPorStatus(entidadesArr),
-              percentualPorRegiao,
-              monitorPerformance,
-            };
-            JSON.stringify(retorno, null, 2);
-            JSON.stringify(retorno, null, 2);return  retorno;
-          }
-        )
+          return {
+            ...metrics,
+            entidadesArr,
+            percentualPorRegiao,
+            monitorPerformance,
+            entidadesPorStatus,
+          } as DashboardStats;
+        })
       );
-      stats$.subscribe((stats: DashboardStats) => {
-        console.log(stats);
-      });
+
+      const finalStats = await lastValueFrom(stats$);
+      //await salvarDashboardData(finalStats, firestore);
+      //await limparDashboardDataAntigo(firestore, finalStats.visitasArr.map(v => v.cnpj)); */
+
       return {
         success: true,
         message: "✅ Dashboard Data atualizado com sucesso. ✅",
       };
     } catch (error: any) {
-      console.error("Erro ao atualizar Dashboard Data:", error);
+      console.error("❌ Erro ao atualizar Dashboard Data:", error);
       return {
         success: false,
         message: "❌ Erro ao atualizar Dashboard Data. ❌",
@@ -126,12 +109,10 @@ const mapearStatusPorCnpj = (
   statusList: StatusInterface[]
 ): Map<string, StatusInterface> => {
   const statusMap = new Map<string, StatusInterface>();
-
   statusList.forEach((status) => {
     const { cnpj, data_atualizado } = status;
     const dataAtual = new Date(data_atualizado);
     const statusExistente = statusMap.get(cnpj);
-
     if (
       !statusExistente ||
       dataAtual > new Date(statusExistente.data_atualizado)
@@ -139,7 +120,6 @@ const mapearStatusPorCnpj = (
       statusMap.set(cnpj, status);
     }
   });
-
   return statusMap;
 };
 
@@ -150,34 +130,18 @@ const calcularPercentual = (parcial: number, total: number): number => {
 const calculateAllMetrics = (
   entidades: EntidadesInterface[],
   visitas: VisitasInterface[]
-): {
-  totalEntidades: number;
-  totalProgramado: number;
-  totalVisitado: number;
-  totalFinalizadas: number;
-  percentualProgramado: number;
-  percentualVisitado: number;
-  percentualFinalizado: number;
-} => {
+) => {
   const totalEntidades = entidades.length;
   let totalProgramado = 0;
   let totalFinalizadas = 0;
-  let totalVisitado = visitas.length - 1;
-  // Single pass through entities for better performance
+  const totalVisitado = visitas.length;
+
   entidades.forEach((entidade) => {
     const status = entidade.status_atual?.toLowerCase();
-
-    if (status === StatusName.Programado.toLowerCase()) {
-      totalProgramado++;
-    }
-
-    if (status === StatusName.Aprovado.toLowerCase()) {
-      totalFinalizadas++;
-    }
+    if (status === StatusName.Programado.toLowerCase()) totalProgramado++;
+    if (status === StatusName.Aprovado.toLowerCase()) totalFinalizadas++;
   });
 
-  totalProgramado = totalProgramado + totalVisitado;
-  totalFinalizadas = totalFinalizadas + 1;
   return {
     totalEntidades,
     totalProgramado,
@@ -194,41 +158,24 @@ const calcularPercentualPorRegiao = (
 ): PercentualPorRegiao[] => {
   const regiaoMap = new Map<
     string,
-    {
-      programado: number;
-      visitado: number;
-      finalizado: number;
-      total: number;
-    }
+    { programado: number; visitado: number; finalizado: number; total: number }
   >();
-
-  // Single pass through entities
   entidades.forEach((entidade) => {
     const { regiao, status_atual } = entidade;
     const statusLower = status_atual?.toLowerCase();
-
-    const dadosRegiao = regiaoMap.get(regiao) || {
+    const dados = regiaoMap.get(regiao) || {
       programado: 0,
       visitado: 0,
       finalizado: 0,
       total: 0,
     };
-
-    dadosRegiao.total++;
-
-    switch (statusLower) {
-      case StatusName.Programado.toLowerCase():
-        dadosRegiao.programado++;
-        break;
-      case StatusName.EmVisita.toLowerCase():
-        dadosRegiao.visitado++;
-        break;
-      case StatusName.Aprovado.toLowerCase():
-        dadosRegiao.finalizado++;
-        break;
-    }
-
-    regiaoMap.set(regiao, dadosRegiao);
+    dados.total++;
+    if (statusLower === StatusName.Programado.toLowerCase()) dados.programado++;
+    else if (statusLower === StatusName.EmVisita.toLowerCase())
+      dados.visitado++;
+    else if (statusLower === StatusName.Aprovado.toLowerCase())
+      dados.finalizado++;
+    regiaoMap.set(regiao, dados);
   });
 
   return Array.from(regiaoMap.entries()).map(([regiao, dados]) => ({
@@ -247,47 +194,43 @@ const calcularPerformancePorMonitor = (
   programacoes: ProgramacaoInterface[],
   visitas: VisitasInterface[]
 ): MonitorPerformance[] => {
-    const monitorMap = new Map<
-      string,
-      { programado: number; visitado: number }
-    >();
+  const monitorMap = new Map<
+    string,
+    { programado: number; visitado: number }
+  >();
 
-    const updateMonitorCount = (
-      monitor: string,
-      type: 'programado' | 'visitado'
-    ) => {
-      if (!monitor) return;
+  const updateMonitorCount = (
+    monitor: string,
+    tipo: "programado" | "visitado"
+  ) => {
+    if (!monitor) return;
+    const dados = monitorMap.get(monitor) || { programado: 0, visitado: 0 };
+    dados[tipo]++;
+    monitorMap.set(monitor, dados);
+  };
 
-      const dados = monitorMap.get(monitor) || { programado: 0, visitado: 0 };
-      dados[type]++;
-      monitorMap.set(monitor, dados);
-    };
+  programacoes.forEach((p) => {
+    updateMonitorCount(p.monitor_1, "programado");
+    updateMonitorCount(p.monitor_2, "programado");
+  });
 
-    // Process programacoes
-    programacoes.forEach((p) => {
-      updateMonitorCount(p.monitor_1, 'programado');
-      updateMonitorCount(p.monitor_2, 'programado');
-    });
+  visitas.forEach((v) => {
+    updateMonitorCount(v.monitor_1, "visitado");
+    updateMonitorCount(v.monitor_2, "visitado");
+  });
 
-    // Process visitas
-    visitas.forEach((v) => {
-      updateMonitorCount(v.monitor_1, 'visitado');
-      updateMonitorCount(v.monitor_2, 'visitado');
-    });
-
-    return Array.from(monitorMap.entries()).map(([monitor, dados]) => ({
-      monitor,
-      programado: dados.programado,
-      visitado: dados.visitado,
-      percentual: calcularPercentual(dados.visitado, dados.programado),
-    }));
-}
+  return Array.from(monitorMap.entries()).map(([monitor, dados]) => ({
+    monitor,
+    programado: dados.programado,
+    visitado: dados.visitado,
+    percentual: calcularPercentual(dados.visitado, dados.programado),
+  }));
+};
 
 const agruparEntidadesPorStatus = (
   entidades: EntidadesInterface[]
 ): StatusGroup[] => {
   const contagem = new Map<string, number>();
-
   entidades.forEach((entidade) => {
     const status = entidade.status_atual;
     contagem.set(status, (contagem.get(status) || 0) + 1);
@@ -299,22 +242,23 @@ const agruparEntidadesPorStatus = (
   }));
 };
 
-
-
 const salvarDashboardData = async (
-  visitas: VisitasInterface[],
+  dashboardData: DashboardStats,
   firestore: FirebaseFirestore.Firestore
 ): Promise<void> => {
-  const batch = firestore.batch();
+  /*   const batch = firestore.batch();
   const collectionRef = firestore.collection("dashboard_data");
-
-  for (const visita of visitas) {
+  visitas.forEach(visita => {
     const docRef = collectionRef.doc(visita.cnpj);
     batch.set(docRef, visita, { merge: true });
-  }
-
+  });
   await batch.commit();
-  console.log(`✅ Salvos ${visitas.length} registros`);
+  */
+  
+  const collectionRef = firestore.collection("dashboard_data");
+  const docRef = collectionRef.doc("dashboardLatestData");
+  docRef.set(dashboardData, { merge: true });
+  console.log(`✅  registros salvos.`); 
 };
 
 const limparDashboardDataAntigo = async (
@@ -326,5 +270,5 @@ const limparDashboardDataAntigo = async (
   const batch = firestore.batch();
   antigos.forEach((doc) => batch.delete(doc.ref));
   await batch.commit();
-  console.log(`🧹 Removidos ${antigos.length} registros antigos`);
+  console.log(`🧹 ${antigos.length} registros antigos removidos.`);
 };
