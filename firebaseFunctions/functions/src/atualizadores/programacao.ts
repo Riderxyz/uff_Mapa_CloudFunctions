@@ -7,8 +7,9 @@ import { Entry } from "../interface/programacaoXML.interface";
 import { EntryXMLInterface } from "../interface/entryXML.interface";
 import { ProgramacaoInterface } from "../interface/programacao.interface";
 import { EntidadesInterface } from "../interface/entidade.interface";
+import { CloudFunctionResponse } from "../interface/cloudFunctionResponse.interface";
 
-export const atualizandoProgramacao = async (): Promise<true | string> => {
+export const atualizandoProgramacao = async (): Promise<CloudFunctionResponse> => {
   try {
     const baseUrl =
       "https://api.umov.me/CenterWeb/api/43843e568c3fa407c0d69ea8677ae2a92d847b";
@@ -84,14 +85,25 @@ export const atualizandoProgramacao = async (): Promise<true | string> => {
     await salvarProgramacao(programacaoParaOFirebase, firestore);
 
     console.log("🧹 Limpando dados antigos...");
-    const novosIds = programacaoParaOFirebase.map((p) => p.id_umov);
+    const novosIds = programacaoParaOFirebase.map((p) => p.cnpj);
     await limparProgramacaoAntiga(firestore, novosIds);
 
     console.log("✅ Atualização finalizada com sucesso.");
-    return true;
+    const response: CloudFunctionResponse = {
+      success: true,
+      message: "✅ Programação atualizada com sucesso. ✅",
+    };
+    return response;
   } catch (error: any) {
     console.error("❌ Erro na atualização da programação:", error);
-    return `false: ${error.toString()}`;
+    const response: CloudFunctionResponse = {
+      success: false,
+      message: "❌ Erro ao atualizar a programação. ❌",
+      error: error.toString(),
+    };
+
+
+    return response;
   }
 };
 

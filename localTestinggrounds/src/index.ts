@@ -5,6 +5,7 @@ import { readExcelFile } from "./readExcel";
 import { excelReadOut } from "./interface/excelReadOut.interface";
 import { saveToJson } from "./saveToJson";
 import { atualizandoProgramacao } from "./atualizadores/programacao";
+import { atualizandoVisitas } from "./atualizadores/visitas";
 
 // Inicialize o Firebase Admin SDK
 admin.initializeApp({
@@ -15,7 +16,5 @@ console.clear();
 
 const formatCNPJ = (cnpj: string): string => cnpj.padStart(14, "0");
 
-atualizandoProgramacao();
-//main();
-//setAtivoFalse();
-//saveToJson();
+//atualizandoProgramacao();
+atualizandoVisitas()
