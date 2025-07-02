@@ -12,7 +12,7 @@ import {
   PercentualPorRegiao,
 } from "../interface/dashboard.interface";
 import { StatusName, RegiaoBrasilNomeEnum } from "../interface/enums";
-
+import { v4 as uuidv4 } from 'uuid';
 interface StatusGroup {
   status: StatusName;
   count: number;
@@ -88,8 +88,8 @@ export const atualizandoDashboardData =
       );
 
       const finalStats = await lastValueFrom(stats$);
-      //await salvarDashboardData(finalStats, firestore);
-      //await limparDashboardDataAntigo(firestore, finalStats.visitasArr.map(v => v.cnpj)); */
+      await salvarDashboardData(finalStats, firestore);
+      await limparEntidadesSubcolecao(firestore, finalStats.entidadesArr.map(e => e.cnpj));
 
       return {
         success: true,
@@ -190,6 +190,8 @@ const calcularPercentualPorRegiao = (
   }));
 };
 
+
+
 const calcularPerformancePorMonitor = (
   programacoes: ProgramacaoInterface[],
   visitas: VisitasInterface[]
@@ -246,29 +248,40 @@ const salvarDashboardData = async (
   dashboardData: DashboardStats,
   firestore: FirebaseFirestore.Firestore
 ): Promise<void> => {
-  /*   const batch = firestore.batch();
-  const collectionRef = firestore.collection("dashboard_data");
-  visitas.forEach(visita => {
-    const docRef = collectionRef.doc(visita.cnpj);
-    batch.set(docRef, visita, { merge: true });
+  const summaryRef = firestore.collection("dashboard_data").doc("dashboardLatestData");
+  const entidadesRef = summaryRef.collection("entidades");
+
+  await summaryRef.set({
+    totalEntidades: dashboardData.totalEntidades,
+    totalProgramado: dashboardData.totalProgramado,
+    totalVisitado: dashboardData.totalVisitado,
+    totalFinalizadas: dashboardData.totalFinalizadas,
+    percentualProgramado: dashboardData.percentualProgramado,
+    percentualVisitado: dashboardData.percentualVisitado,
+    percentualFinalizado: dashboardData.percentualFinalizado,
+    percentualPorRegiao: dashboardData.percentualPorRegiao,
+    monitorPerformance: dashboardData.monitorPerformance,
+    entidadesPorStatus: dashboardData.entidadesPorStatus
+  }, { merge: true });
+
+  const batch = firestore.batch();
+  dashboardData.entidadesArr.forEach(entidade => {
+    const docRef = entidadesRef.doc(entidade.cnpj);
+    batch.set(docRef, entidade, { merge: true });
   });
   await batch.commit();
-  */
-  
-  const collectionRef = firestore.collection("dashboard_data");
-  const docRef = collectionRef.doc("dashboardLatestData");
-  docRef.set(dashboardData, { merge: true });
-  console.log(`✅  registros salvos.`); 
+  console.log(`✅ ${dashboardData.entidadesArr.length} entidades salvas na subcoleção.`);
 };
 
-const limparDashboardDataAntigo = async (
+const limparEntidadesSubcolecao = async (
   firestore: FirebaseFirestore.Firestore,
   novosIds: string[]
 ): Promise<void> => {
-  const snapshot = await firestore.collection("dashboard_data").get();
-  const antigos = snapshot.docs.filter((doc) => !novosIds.includes(doc.id));
+  const entidadesRef = firestore.collection("dashboard_data").doc("dashboardLatestData").collection("entidades");
+  const snapshot = await entidadesRef.get();
+  const antigos = snapshot.docs.filter(doc => !novosIds.includes(doc.id));
   const batch = firestore.batch();
-  antigos.forEach((doc) => batch.delete(doc.ref));
+  antigos.forEach(doc => batch.delete(doc.ref));
   await batch.commit();
-  console.log(`🧹 ${antigos.length} registros antigos removidos.`);
+  console.log(`🧹 ${antigos.length} entidades antigas removidas da subcoleção.`);
 };
