@@ -16,4 +16,5 @@ export enum VisitasStatus {
   Approved = "Aprovado",
   Rejected = "Reprovado",
   EmAnalise = "Em analise",
+  Nulo = ''
 }

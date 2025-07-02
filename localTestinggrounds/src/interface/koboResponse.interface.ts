@@ -131,4 +131,10 @@ export interface AttachmentInterface {
   question_xpath: string
 }
 
-export interface ValidationStatus {}
+export interface ValidationStatus {
+
+  timestamp: number
+  uid: string
+  by_whom: string
+  label?: 'Approved' | 'Rejected';
+}
