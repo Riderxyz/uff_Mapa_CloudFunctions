@@ -1,5 +1,5 @@
 
-import { Estado, Regiao, StatusName} from './enums';
+import { Estado, RegiaoBrasilNomeEnum, StatusName} from './enums';
 
 
 export interface EntidadesInterface {
@@ -13,7 +13,7 @@ export interface EntidadesInterface {
   bairro: string;
   municipio: string;
   uf: Estado;
-  regiao: Regiao;
+  regiao: RegiaoBrasilNomeEnum;
   cep: string;
   lat: number;
   long: number;

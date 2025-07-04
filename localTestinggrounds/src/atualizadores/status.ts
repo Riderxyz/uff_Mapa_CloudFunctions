@@ -24,6 +24,9 @@ export const atualizandoStatus = async (): Promise<CloudFunctionResponse> => {
   console.log(`Total de status: ${statusArr.length}`);
   console.log("🔄 Iniciando a atualização do Status...");
 
+
+
+
   return {
     success: true,
     message: "✅ Status atualizado com sucesso. ✅",
