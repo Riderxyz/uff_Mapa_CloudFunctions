@@ -8,7 +8,7 @@ import { repopular } from "./repopular";
 
 // Inicialize o Firebase Admin SDK
 admin.initializeApp({
-  credential: admin.credential.cert(require("./importKeys.json")),
+  credential: admin.credential.cert(require("./painelDevKeys.json")),
 });
 
 console.clear();
@@ -18,4 +18,9 @@ const formatCNPJ = (cnpj: string): string => cnpj.padStart(14, "0");
 //atualizandoProgramacao();
 //atualizandoVisitas()
 //testeKobo();
-repopular();
+/* 
+
+setTimeout(() => {
+  repopular();
+}, 3000);
+ */

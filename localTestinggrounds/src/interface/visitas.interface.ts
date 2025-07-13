@@ -1,7 +1,7 @@
 export interface VisitasInterface {
   cnpj: string;
-  data_status: string;
-  data_visita: string;
+  data_status: Date;
+  data_visita: Date;
   fase_pesquisa: string;
   formulario: string;
   lat: string;

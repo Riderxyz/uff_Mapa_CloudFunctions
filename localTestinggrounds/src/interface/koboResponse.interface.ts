@@ -136,5 +136,5 @@ export interface ValidationStatus {
   timestamp: number
   uid: string
   by_whom: string
-  label?: 'Approved' | 'Rejected';
+  label?: 'Approved' | 'Rejected' | 'On Hold' | "";
 }

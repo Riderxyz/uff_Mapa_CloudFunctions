@@ -19,20 +19,23 @@ export const atualizandoProgramacao = async (): Promise<CloudFunctionResponse> =
     console.log("🔄 Iniciando a atualização da programação...");
 
     const firestore = admin.firestore();
-    const entidadesSnapshot = await firestore.collection("entidade_v3").get();
+    const entidadesSnapshot = await firestore.collection("entidades_v1").get();
 
     const entidadesMap = new Map<string, EntidadesInterface>();
-    entidadesSnapshot.forEach((doc) => {
-      const data = doc.data() as EntidadesInterface;
-      if (data.id_umov) {
-        entidadesMap.set(data.id_umov, data);
-      }
-    });
 
     const parser = new xml2js.Parser({
       explicitArray: false,
       mergeAttrs: true,
       attrNameProcessors: [(name) => `_${name}`],
+    });
+
+
+    entidadesSnapshot.forEach((doc) => {
+    //  console.log(doc.data());
+      const data = doc.data() as EntidadesInterface;
+      if (data.id_umov) {
+        entidadesMap.set(data.id_umov, data);
+      }
     });
 
     const fetchAndParse = (page: number) =>
@@ -65,7 +68,6 @@ export const atualizandoProgramacao = async (): Promise<CloudFunctionResponse> =
     const programacaoParaOFirebase: ProgramacaoInterface[] = [];
     const concurrency = 10;
     const batches = [];
-
     for (let i = 0; i < allEntries!.length; i += concurrency) {
       const batch = allEntries!.slice(i, i + concurrency);
       batches.push(
@@ -130,10 +132,9 @@ async function processEntry(
       parseInt(dateParts[0]),
       parseInt(dateParts[1]) - 1,
       parseInt(dateParts[2])
-    ).getTime();
+    )
 
     const entidade = entidadesMap.get(serviceLocalId);
-
     const programacao: ProgramacaoInterface = {
       id_umov: serviceLocalId,
       cnpj: entidade?.cnpj || "",
@@ -169,7 +170,7 @@ async function salvarProgramacao(
   firestore: FirebaseFirestore.Firestore
 ): Promise<void> {
   const batch = firestore.batch();
-  const collectionRef = firestore.collection("programacao_testesLocais");
+  const collectionRef = firestore.collection("programacao_v1");
 
   for (const item of programacoes) {
     const docRef = collectionRef.doc(item.cnpj);
@@ -184,7 +185,7 @@ async function limparProgramacaoAntiga(
   firestore: FirebaseFirestore.Firestore,
   novosIds: string[]
 ): Promise<void> {
-  const snapshot = await firestore.collection("programacao_testesLocais").get();
+  const snapshot = await firestore.collection("programacao_v1").get();
   const antigos = snapshot.docs.filter((doc) => !novosIds.includes(doc.id));
 
   const batch = firestore.batch();

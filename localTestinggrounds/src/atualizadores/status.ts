@@ -5,7 +5,7 @@ import { EntidadesInterface } from "../interface/entidade.interface";
 import { ProgramacaoInterface } from "../interface/programacao.interface";
 import { VisitasInterface } from "../interface/visitas.interface";
 import { StatusInterface } from "../interface/status.interface";
-import { StatusName } from "../interface/enums";
+import { StatusNameEnum } from "../interface/enums";
 
 interface GroupedItem {
   entidade: EntidadesInterface;
@@ -102,7 +102,7 @@ export const atualizandoStatus = async (): Promise<CloudFunctionResponse> => {
   for (let i = 0; i < fullMatches.length; i++) {
     const element = fullMatches[i];
 
-    if (element.entidade.status_atual !== StatusName.Aprovado) {
+    if (element.entidade.status_atual !== StatusNameEnum.Aprovado) {
       const dataDeProgramacao = element.programacao.data_programacao;
       element.visita.data_status;
       const dataDeStatus = element.status.data_atualizado;

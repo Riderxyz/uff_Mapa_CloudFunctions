@@ -1,4 +1,4 @@
-﻿export enum Estado {
+﻿export enum EstadoEnum {
   AC = "AC",
   AL = "AL",
   AM = "AM",
@@ -30,7 +30,7 @@
 }
 
 
- export enum TipoEntidade {
+ export enum TipoEntidadeEnum {
   Vaga = "Vaga",
   Fomento = "Fomento",
  }
@@ -43,7 +43,7 @@ export enum RegiaoBrasilNomeEnum {
   Sul = "Sul",
   Nenhuma = "Nenhuma",
 }
-export enum StatusName {
+export enum StatusNameEnum {
   Todos = "Todos",
   Cadastrado = "Cadastrado",
   Programado = "Programado",
@@ -53,7 +53,7 @@ export enum StatusName {
   Aprovado = "Aprovado",
 }
 
-export interface RegiaoBrasil {
+export interface RegiaoBrasilEnum {
   regiao: RegiaoBrasilNomeEnum;
-  ufs: Estado[];
+  ufs: EstadoEnum[];
 }

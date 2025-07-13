@@ -1,7 +1,7 @@
 export interface ProgramacaoInterface {
     id_umov: string;
   cnpj: string;
-  data_programacao: number;
+  data_programacao: Date;
   fase_pesquisa: string;
   formularios: string[];
   id: string;

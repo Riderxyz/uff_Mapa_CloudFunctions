@@ -135,3 +135,5 @@ dist
 .yarn/install-state.gz
 .pnp.*
 localTestinggrounds/src/importKeys.json
+localTestinggrounds/src/painelDevKeys.json
+localTestinggrounds/src/painelProdKeys.json
