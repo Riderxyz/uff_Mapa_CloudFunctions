@@ -1,9 +1,11 @@
 
-import { Estado, RegiaoBrasilNomeEnum, StatusName} from './enums';
+import { Estado, RegiaoBrasilNomeEnum, StatusName, TipoEntidade} from './enums';
 
 
 export interface EntidadesInterface {
   id_umov: string;
+  codigoEntidade:string;
+  tipoEntidade: TipoEntidadeInterface[]
   nome: string;
   cnpj: string;
   email: string;
@@ -23,6 +25,21 @@ export interface EntidadesInterface {
   finalizada?: FinalizacaoInfo;
 }
 
+
+
+
+export interface EnderecoInterface {
+  /* endereco: string; */
+  bairro: string;
+  municipio: string;
+  uf: Estado;
+  cep: string;
+  pais: string;
+  regiao: RegiaoBrasilNomeEnum;
+  lat: number;
+  long: number;
+}
+
 export interface FinalizacaoInfo {
   data: string; // formato: dd/MM/yyyy, HH:mm:ss
   status: StatusName;
@@ -30,3 +47,8 @@ export interface FinalizacaoInfo {
 }
 
 
+
+export interface TipoEntidadeInterface {
+  id: string;
+  tipo: TipoEntidade;
+}

@@ -29,6 +29,12 @@
   Null = "",
 }
 
+
+ export enum TipoEntidade {
+  Vaga = "Vaga",
+  Fomento = "Fomento",
+ }
+
 export enum RegiaoBrasilNomeEnum {
   Norte = "Norte",
   Nordeste = "Nordeste",

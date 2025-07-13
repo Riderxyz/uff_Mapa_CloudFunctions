@@ -3,7 +3,7 @@ import * as xml2js from "xml2js";
 import axios from "axios";
 import * as admin from "firebase-admin";
 
-import { Entry } from "../interface/programacaoXML.interface";
+import { Entry } from "../interface/umovResponse.interface";
 import { EntryXMLInterface } from "../interface/entryXML.interface";
 import { ProgramacaoInterface } from "../interface/programacao.interface";
 import { EntidadesInterface } from "../interface/entidade.interface";
@@ -157,6 +157,8 @@ async function processEntry(
       programacao.monitor_1 = agentName;
       programacaoList.push(programacao);
     }
+
+    
   } catch (error) {
     console.error(`❌ Erro ao processar entry ${entry._id}:`, error);
   }

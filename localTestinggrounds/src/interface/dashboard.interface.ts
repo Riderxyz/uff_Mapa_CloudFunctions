@@ -3,7 +3,7 @@ import {  RegiaoBrasilNomeEnum } from './enums';
 
 export interface DashboardStats {
   totalEntidades: number;
-  entidadesArr: EntidadesInterface[];
+  entidadesArr?: EntidadesInterface[];
   percentualProgramado: number;
   percentualVisitado: number;
   percentualFinalizado: number;

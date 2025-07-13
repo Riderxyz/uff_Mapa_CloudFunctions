@@ -79,7 +79,6 @@ export const atualizandoDashboardData =
 
           return {
             ...metrics,
-            entidadesArr,
             percentualPorRegiao,
             monitorPerformance,
             entidadesPorStatus,
@@ -89,7 +88,7 @@ export const atualizandoDashboardData =
 
       const finalStats = await lastValueFrom(stats$);
       await salvarDashboardData(finalStats, firestore);
-      await limparEntidadesSubcolecao(firestore, finalStats.entidadesArr.map(e => e.cnpj));
+ //     await limparEntidadesSubcolecao(firestore, finalStats.entidadesArr.map(e => e.cnpj));
 
       return {
         success: true,
@@ -265,23 +264,12 @@ const salvarDashboardData = async (
   }, { merge: true });
 
   const batch = firestore.batch();
-  dashboardData.entidadesArr.forEach(entidade => {
-    const docRef = entidadesRef.doc(entidade.cnpj);
-    batch.set(docRef, entidade, { merge: true });
-  });
   await batch.commit();
-  console.log(`✅ ${dashboardData.entidadesArr.length} entidades salvas na subcoleção.`);
 };
 
 const limparEntidadesSubcolecao = async (
   firestore: FirebaseFirestore.Firestore,
   novosIds: string[]
 ): Promise<void> => {
-  const entidadesRef = firestore.collection("dashboard_data").doc("dashboardLatestData").collection("entidades");
-  const snapshot = await entidadesRef.get();
-  const antigos = snapshot.docs.filter(doc => !novosIds.includes(doc.id));
-  const batch = firestore.batch();
-  antigos.forEach(doc => batch.delete(doc.ref));
-  await batch.commit();
-  console.log(`🧹 ${antigos.length} entidades antigas removidas da subcoleção.`);
+
 };

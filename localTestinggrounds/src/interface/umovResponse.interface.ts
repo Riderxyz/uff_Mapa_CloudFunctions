@@ -1,4 +1,4 @@
-export interface ProgramacaoXMLInterface {
+export interface UmovResponseInterface {
   result: Result
 }
 
