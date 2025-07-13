@@ -30,9 +30,9 @@ export const atualizandoStatus = async (): Promise<CloudFunctionResponse> => {
     visitasSnapshot,
     statusSnapshot,
   ] = await Promise.all([
-    firestore.collection("entidade_v3").get(),
-    firestore.collection("programacao_v3").get(),
-    firestore.collection("visitas_v3").get(),
+    firestore.collection("entidade_v1").get(),
+    firestore.collection("programacao_v1").get(),
+    firestore.collection("visitas_v1").get(),
     firestore.collection("list_status_v3").get(),
   ]);
 
