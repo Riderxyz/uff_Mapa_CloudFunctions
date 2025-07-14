@@ -56,8 +56,8 @@ export const atualizandoStatus = async (): Promise<CloudFunctionResponse> => {
 
         if (programacao) {
           currrentStatus = StatusNameEnum.Programado;
-        } 
-        
+        }
+
         if (visita) {
           if (visita.status === VisitasStatus.EmAnalise) {
             currrentStatus = StatusNameEnum.EmAnalise;
@@ -85,26 +85,37 @@ export const atualizandoStatus = async (): Promise<CloudFunctionResponse> => {
             const entidadesBatch = firestore.batch();
             batchGroup.forEach((status) => {
               const cnpjKey = status.cnpj.replace(/[^\d]/g, "");
-              const listaStatusRef = firestore.collection("list_status_v1").doc(cnpjKey);
-              const entidadeRef = firestore.collection("entidades_v1").doc(cnpjKey);
-              const partialEntidade: Partial<EntidadesInterface> = {
-                status_atual: status.status,
-                status_atual_data: status.data_atualizado,
-                finalizada: status.status === StatusNameEnum.Aprovado
-                  ? {
-                      data: status.data_atualizado,
-                      status: status.status,
-                      usuario: status.usuarioResponsavel
-                    }
-                  : undefined
+              const listaStatusRef = firestore
+                .collection("list_status_v1")
+                .doc(cnpjKey);
+              const entidadeRef = firestore
+                .collection("entidades_v1")
+                .doc(cnpjKey);
+
+              let partialEntidade: Partial<EntidadesInterface> = {};
+              if (status.status === StatusNameEnum.Aprovado) {
+                partialEntidade = {
+                  status_atual: status.status,
+                  status_atual_data: status.data_atualizado,
+                  finalizada: {
+                    data: status.data_atualizado,
+                    status: status.status,
+                    usuario: status.usuarioResponsavel,
+                  },
+                };
+              } else {
+                partialEntidade = {
+                  status_atual: status.status,
+                  status_atual_data: status.data_atualizado,
+                };
               }
               listaStatusBatch.set(listaStatusRef, status);
               entidadesBatch.update(entidadeRef, partialEntidade);
             });
             return forkJoin([
-              from(listaStatusBatch.commit()),from( entidadesBatch.commit())
-            ])
-            .pipe(
+              from(listaStatusBatch.commit()),
+              from(entidadesBatch.commit()),
+            ]).pipe(
               tap(() =>
                 console.log(
                   `✅ Batch ${i + 1} enviado com ${batchGroup.length} entidades`

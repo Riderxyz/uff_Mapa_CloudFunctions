@@ -11,7 +11,11 @@ import {
   DashboardStats,
   PercentualPorRegiao,
 } from "../interface/dashboard.interface";
-import { StatusNameEnum, RegiaoBrasilNomeEnum, CloudFunctionResponseType } from "../interface/enums";
+import {
+  StatusNameEnum,
+  RegiaoBrasilNomeEnum,
+  CloudFunctionResponseType,
+} from "../interface/enums";
 import { v4 as uuidv4 } from "uuid";
 interface StatusGroup {
   status: StatusNameEnum;
@@ -45,7 +49,7 @@ export const atualizandoDashboardData =
           .where("fase_pesquisa", "==", "2025-2")
           .get()
       );
-      const status$ = from(firestore.collection("list_status_v3").get());
+      const status$ = from(firestore.collection("list_status_v1").get());
 
       const stats$ = combineLatest([
         entidades$,
@@ -67,7 +71,6 @@ export const atualizandoDashboardData =
             (doc) => doc.data() as StatusInterface
           );
 
-          const statusMap = mapearStatusPorCnpj(statusArr);
           const metrics = calculateAllMetrics(entidadesArr, visitasArr);
           const percentualPorRegiao = calcularPercentualPorRegiao(entidadesArr);
           const monitorPerformance = calcularPerformancePorMonitor(
@@ -75,6 +78,14 @@ export const atualizandoDashboardData =
             visitasArr
           );
           const entidadesPorStatus = agruparEntidadesPorStatus(entidadesArr);
+
+          const retorno = {
+            ...metrics,
+            percentualPorRegiao,
+            monitorPerformance,
+            entidadesPorStatus,
+          };
+          console.log(retorno);
 
           return {
             ...metrics,
@@ -87,7 +98,7 @@ export const atualizandoDashboardData =
 
       const finalStats = await lastValueFrom(stats$);
       await salvarDashboardData(finalStats, firestore);
-    return {
+      return {
         success: true,
         type: CloudFunctionResponseType.Dashboard,
         message: "✅ Dashboard Data atualizado com sucesso. ✅",
@@ -102,24 +113,6 @@ export const atualizandoDashboardData =
       };
     }
   };
-
-const mapearStatusPorCnpj = (
-  statusList: StatusInterface[]
-): Map<string, StatusInterface> => {
-  const statusMap = new Map<string, StatusInterface>();
-  statusList.forEach((status) => {
-    const { cnpj, data_atualizado } = status;
-    const dataAtual = new Date(data_atualizado);
-    const statusExistente = statusMap.get(cnpj);
-    if (
-      !statusExistente ||
-      dataAtual > new Date(statusExistente.data_atualizado)
-    ) {
-      statusMap.set(cnpj, status);
-    }
-  });
-  return statusMap;
-};
 
 const calcularPercentual = (parcial: number, total: number): number => {
   return total > 0 ? Math.round((parcial / total) * 100) : 0;
@@ -143,7 +136,7 @@ const calculateAllMetrics = (
       totalFinalizadas++;
     }
   });
-totalProgramado = totalProgramado + totalVisitado;
+  totalProgramado = totalProgramado + totalVisitado;
   return {
     totalEntidades,
     totalProgramado,
@@ -154,8 +147,6 @@ totalProgramado = totalProgramado + totalVisitado;
     percentualFinalizado: calcularPercentual(totalFinalizadas, totalEntidades),
   };
 };
-
-
 
 const calcularPercentualPorRegiao = (
   entidades: EntidadesInterface[]
@@ -291,4 +282,3 @@ const salvarDashboardData = async (
   const batch = firestore.batch();
   await batch.commit();
 };
-

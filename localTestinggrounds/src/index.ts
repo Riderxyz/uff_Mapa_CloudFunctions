@@ -3,7 +3,6 @@ import { atualizandoProgramacao } from "./atualizadores/programacao";
 import { atualizandoVisitas } from "./atualizadores/visitas";
 import { atualizandoDashboardData } from "./atualizadores/dashboardData";
 import { atualizandoStatus } from "./atualizadores/status";
-import { testeKobo } from "./atualizadores/testeKobo.service";
 import { repopular } from "./repopular";
 import { CloudFunctionResponse } from "./interface/cloudFunctionResponse.interface";
 import { concatMap, from, switchMap, tap, toArray } from "rxjs";
@@ -11,24 +10,23 @@ import { atualizarLog } from "./atualizadores/log";
 
 // Inicialize o Firebase Admin SDK
 admin.initializeApp({
-  credential: admin.credential.cert(require("./painelDevKeys.json")),
+  credential: admin.credential.cert(require("./painelProdKeys.json")),
 });
 
 console.clear();
 
 const formatCNPJ = (cnpj: string): string => cnpj.padStart(14, "0");
 
-const rodar = false;
+const rodar = true;
 
 if (rodar) {
-  repopular();
+  //repopular();
   const funcoesEmOrdem: (() => Promise<CloudFunctionResponse>)[] = [
     atualizandoProgramacao,
     atualizandoVisitas,
     atualizandoStatus,
     atualizandoDashboardData,
   ];
-
   from(funcoesEmOrdem)
     .pipe(
       concatMap((fn) => from(fn())),
@@ -62,6 +60,7 @@ if (rodar) {
 //atualizandoStatus();
 //atualizandoDashboardData();
 //repopular()
+
 
 const emails = [
   "samio.mendes@mds.gov.br",
