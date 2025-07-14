@@ -1,4 +1,4 @@
-import fs from "fs";
+import fs, { stat } from "fs";
 import * as admin from "firebase-admin";
 import { CloudFunctionResponse } from "../interface/cloudFunctionResponse.interface";
 import { FormularioInterface } from "../interface/formulario.interface";
@@ -126,7 +126,7 @@ const fetchVisitasPorFormulario = async (
       data_visita: data_visita,
       data_status: status.data,
       formulario: formulario.assetid || "",
-      usuario_status: item["_validation_status"]?.by_whom || "",
+      usuarioResponsavel: status.usuario,
       status: status.status,
       monitor_1: item["group_identificacao/monitor_responsavel_1"],
       monitor_2: item["group_identificacao/monitor_responsavel_2"],

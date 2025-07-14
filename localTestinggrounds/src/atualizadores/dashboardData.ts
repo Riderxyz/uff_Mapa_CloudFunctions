@@ -11,10 +11,10 @@ import {
   DashboardStats,
   PercentualPorRegiao,
 } from "../interface/dashboard.interface";
-import { StatusName, RegiaoBrasilNomeEnum } from "../interface/enums";
-import { v4 as uuidv4 } from 'uuid';
+import { StatusNameEnum, RegiaoBrasilNomeEnum } from "../interface/enums";
+import { v4 as uuidv4 } from "uuid";
 interface StatusGroup {
-  status: StatusName;
+  status: StatusNameEnum;
   count: number;
 }
 
@@ -32,16 +32,16 @@ export const atualizandoDashboardData =
 
       const firestore = admin.firestore();
 
-      const entidades$ = from(firestore.collection("entidade_v3").get());
+      const entidades$ = from(firestore.collection("entidades_v1").get());
       const programacoes$ = from(
         firestore
-          .collection("programacao_v3")
+          .collection("programacao_v1")
           .where("fase_pesquisa", "==", "2025-2")
           .get()
       );
       const visitas$ = from(
         firestore
-          .collection("visitas_v3")
+          .collection("visitas_v1")
           .where("fase_pesquisa", "==", "2025-2")
           .get()
       );
@@ -68,7 +68,6 @@ export const atualizandoDashboardData =
           );
 
           const statusMap = mapearStatusPorCnpj(statusArr);
-
           const metrics = calculateAllMetrics(entidadesArr, visitasArr);
           const percentualPorRegiao = calcularPercentualPorRegiao(entidadesArr);
           const monitorPerformance = calcularPerformancePorMonitor(
@@ -87,10 +86,14 @@ export const atualizandoDashboardData =
       );
 
       const finalStats = await lastValueFrom(stats$);
-      await salvarDashboardData(finalStats, firestore);
- //     await limparEntidadesSubcolecao(firestore, finalStats.entidadesArr.map(e => e.cnpj));
 
-      return {
+    /*   stats$.subscribe((res) => {
+        console.log(res);
+      }); */
+      //await salvarDashboardData(finalStats, firestore);
+      //     await limparEntidadesSubcolecao(firestore, finalStats.entidadesArr.map(e => e.cnpj));
+
+    return {
         success: true,
         message: "✅ Dashboard Data atualizado com sucesso. ✅",
       };
@@ -137,8 +140,12 @@ const calculateAllMetrics = (
 
   entidades.forEach((entidade) => {
     const status = entidade.status_atual?.toLowerCase();
-    if (status === StatusName.Programado.toLowerCase()) totalProgramado++;
-    if (status === StatusName.Aprovado.toLowerCase()) totalFinalizadas++;
+    if (status === StatusNameEnum.Programado.toLowerCase()) {
+      totalProgramado++;
+    }
+    if (status === StatusNameEnum.Aprovado.toLowerCase()) {
+      totalFinalizadas++;
+    }
   });
 
   return {
@@ -159,9 +166,11 @@ const calcularPercentualPorRegiao = (
     string,
     { programado: number; visitado: number; finalizado: number; total: number }
   >();
-  entidades.forEach((entidade) => {
-    const { regiao, status_atual } = entidade;
-    const statusLower = status_atual?.toLowerCase();
+
+  for (let i = 0; i < entidades.length; i++) {
+    const element = entidades[i];
+    const status_atual = element.status_atual;
+    const regiao = element.endereco.regiao;
     const dados = regiaoMap.get(regiao) || {
       programado: 0,
       visitado: 0,
@@ -169,13 +178,29 @@ const calcularPercentualPorRegiao = (
       total: 0,
     };
     dados.total++;
-    if (statusLower === StatusName.Programado.toLowerCase()) dados.programado++;
-    else if (statusLower === StatusName.EmVisita.toLowerCase())
+
+    if (
+      status_atual?.toLowerCase() === StatusNameEnum.Programado.toLowerCase()
+    ) {
+      dados.programado++;
+    } else if (
+      status_atual?.toLowerCase() === StatusNameEnum.EmVisita.toLowerCase()
+    ) {
       dados.visitado++;
-    else if (statusLower === StatusName.Aprovado.toLowerCase())
+    } else if (
+      status_atual?.toLowerCase() === StatusNameEnum.EmAnalise.toLowerCase()
+    ) {
+      dados.visitado++;
+    } else if (
+      status_atual?.toLowerCase() === StatusNameEnum.Aprovado.toLowerCase()
+    ) {
       dados.finalizado++;
+    }
     regiaoMap.set(regiao, dados);
-  });
+    if (i === entidades.length - 1) {
+      console.log("regiaoMap", regiaoMap);
+    }
+  }
 
   return Array.from(regiaoMap.entries()).map(([regiao, dados]) => ({
     regiao: regiao as RegiaoBrasilNomeEnum,
@@ -188,8 +213,6 @@ const calcularPercentualPorRegiao = (
     porcentualFinalizado: calcularPercentual(dados.finalizado, dados.total),
   }));
 };
-
-
 
 const calcularPerformancePorMonitor = (
   programacoes: ProgramacaoInterface[],
@@ -238,7 +261,7 @@ const agruparEntidadesPorStatus = (
   });
 
   return Array.from(contagem.entries()).map(([status, count]) => ({
-    status: status as StatusName,
+    status: status as StatusNameEnum,
     count,
   }));
 };
@@ -247,21 +270,26 @@ const salvarDashboardData = async (
   dashboardData: DashboardStats,
   firestore: FirebaseFirestore.Firestore
 ): Promise<void> => {
-  const summaryRef = firestore.collection("dashboard_data").doc("dashboardLatestData");
+  const summaryRef = firestore
+    .collection("dashboard_data")
+    .doc("dashboardLatestData");
   const entidadesRef = summaryRef.collection("entidades");
 
-  await summaryRef.set({
-    totalEntidades: dashboardData.totalEntidades,
-    totalProgramado: dashboardData.totalProgramado,
-    totalVisitado: dashboardData.totalVisitado,
-    totalFinalizadas: dashboardData.totalFinalizadas,
-    percentualProgramado: dashboardData.percentualProgramado,
-    percentualVisitado: dashboardData.percentualVisitado,
-    percentualFinalizado: dashboardData.percentualFinalizado,
-    percentualPorRegiao: dashboardData.percentualPorRegiao,
-    monitorPerformance: dashboardData.monitorPerformance,
-    entidadesPorStatus: dashboardData.entidadesPorStatus
-  }, { merge: true });
+  await summaryRef.set(
+    {
+      totalEntidades: dashboardData.totalEntidades,
+      totalProgramado: dashboardData.totalProgramado,
+      totalVisitado: dashboardData.totalVisitado,
+      totalFinalizadas: dashboardData.totalFinalizadas,
+      percentualProgramado: dashboardData.percentualProgramado,
+      percentualVisitado: dashboardData.percentualVisitado,
+      percentualFinalizado: dashboardData.percentualFinalizado,
+      percentualPorRegiao: dashboardData.percentualPorRegiao,
+      monitorPerformance: dashboardData.monitorPerformance,
+      entidadesPorStatus: dashboardData.entidadesPorStatus,
+    },
+    { merge: true }
+  );
 
   const batch = firestore.batch();
   await batch.commit();
@@ -270,6 +298,4 @@ const salvarDashboardData = async (
 const limparEntidadesSubcolecao = async (
   firestore: FirebaseFirestore.Firestore,
   novosIds: string[]
-): Promise<void> => {
-
-};
+): Promise<void> => {};

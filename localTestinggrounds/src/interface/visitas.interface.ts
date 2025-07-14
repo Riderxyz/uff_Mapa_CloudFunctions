@@ -9,7 +9,7 @@ export interface VisitasInterface {
   monitor_1: string;
   monitor_2: string;
   status: VisitasStatus;
-  usuario_status: string;
+  usuarioResponsavel: string;
 }
 
 export enum VisitasStatus {

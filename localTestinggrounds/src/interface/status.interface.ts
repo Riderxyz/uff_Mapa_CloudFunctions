@@ -1,11 +1,10 @@
-﻿import { StatusName } from "./enums"
+﻿import { StatusNameEnum } from "./enums"
 
 export interface StatusInterface {
-  usuario: string
+  usuarioResponsavel: string
   id_umov: string
   fase_pesquisa: string
   cnpj: string
-  data_atualizado: number
-  status: StatusName
-  id: string
+  data_atualizado: Date
+  status: StatusNameEnum
 }

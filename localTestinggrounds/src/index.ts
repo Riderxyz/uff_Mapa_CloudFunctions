@@ -17,6 +17,8 @@ const formatCNPJ = (cnpj: string): string => cnpj.padStart(14, "0");
 
 //atualizandoProgramacao();
 //atualizandoVisitas()
+//atualizandoStatus();
+atualizandoDashboardData();
 //testeKobo();
 /* 
 

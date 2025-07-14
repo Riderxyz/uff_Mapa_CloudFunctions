@@ -138,6 +138,7 @@ async function processEntry(
     const programacao: ProgramacaoInterface = {
       id_umov: serviceLocalId,
       cnpj: entidade?.cnpj || "",
+      usuarioResponsavel: 'Servidor',
       data_programacao: timestamp,
       fase_pesquisa: "2025-2",
       formularios: [],

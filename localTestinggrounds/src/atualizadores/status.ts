@@ -1,142 +1,132 @@
-import { CloudFunctionResponse } from "../interface/cloudFunctionResponse.interface";
-import { from, map, toArray, mergeMap, of } from "rxjs";
+import { from, of, forkJoin } from "rxjs";
+import {
+  catchError,
+  map,
+  mergeMap,
+  toArray,
+  bufferCount,
+  tap,
+} from "rxjs/operators";
 import * as admin from "firebase-admin";
+
+import { CloudFunctionResponse } from "../interface/cloudFunctionResponse.interface";
 import { EntidadesInterface } from "../interface/entidade.interface";
 import { ProgramacaoInterface } from "../interface/programacao.interface";
-import { VisitasInterface } from "../interface/visitas.interface";
+import {
+  VisitasInterface,
+  VisitasStatus,
+} from "../interface/visitas.interface";
 import { StatusInterface } from "../interface/status.interface";
 import { StatusNameEnum } from "../interface/enums";
 
-interface GroupedItem {
-  entidade: EntidadesInterface;
-  programacao: ProgramacaoInterface;
-  visita: VisitasInterface;
-  status: StatusInterface;
-}
-
-interface PartialGroupedItem {
-  entidade?: EntidadesInterface;
-  programacao?: ProgramacaoInterface;
-  visita?: VisitasInterface;
-  status?: StatusInterface;
-}
-
 export const atualizandoStatus = async (): Promise<CloudFunctionResponse> => {
   const firestore = admin.firestore();
+  const BATCH_SIZE = 500;
+  console.clear();
+  console.log("🔄 Iniciando a atualização da Status...");
+  try {
+    const collections$ = forkJoin({
+      entidades: from(firestore.collection("entidades_v1").get()),
+      programacoes: from(firestore.collection("programacao_v1").get()),
+      visitas: from(firestore.collection("visitas_v1").get()),
+      status: from(firestore.collection("list_status_v1").get()),
+    });
 
-  const [
-    entidadesSnapshot,
-    programacaoSnapshot,
-    visitasSnapshot,
-    statusSnapshot,
-  ] = await Promise.all([
-    firestore.collection("entidade_v1").get(),
-    firestore.collection("programacao_v1").get(),
-    firestore.collection("visitas_v1").get(),
-    firestore.collection("list_status_v3").get(),
-  ]);
+    const snapshots = await collections$.toPromise();
 
-  const entidadesArr = entidadesSnapshot.docs.map(
-    (doc) => doc.data() as EntidadesInterface
-  );
-  const programacaoArr = programacaoSnapshot.docs.map(
-    (doc) => doc.data() as ProgramacaoInterface
-  );
-  const visitasArr = visitasSnapshot.docs.map(
-    (doc) => doc.data() as VisitasInterface
-  );
-  const statusArr = statusSnapshot.docs.map(
-    (doc) => doc.data() as StatusInterface
-  );
+    const entidadesArr = snapshots!.entidades.docs.map(
+      (doc) => doc.data() as EntidadesInterface
+    );
+    const programacaoArr = snapshots!.programacoes.docs.map(
+      (doc) => doc.data() as ProgramacaoInterface
+    );
+    const visitasArr = snapshots!.visitas.docs.map(
+      (doc) => doc.data() as VisitasInterface
+    );
 
-  console.log("🔄 Iniciando a atualização do Status...");
-  console.log(`Total de entidades: ${entidadesArr.length}`);
-  console.log(`Total de programações: ${programacaoArr.length}`);
-  console.log(`Total de visitas: ${visitasArr.length}`);
-  console.log(`Total de status: ${statusArr.length}`);
+    const rxjsPipeline = from(entidadesArr).pipe(
+      map((entidade) => {
+        let currrentStatus: StatusNameEnum = StatusNameEnum.Cadastrado;
+        let currentResponsavel = "Servidor";
 
-  // Create Maps for quick lookup
-  const entidadeMap = new Map(entidadesArr.map((obj) => [obj.cnpj, obj]));
-  const programacaoMap = new Map(programacaoArr.map((obj) => [obj.cnpj, obj]));
-  const visitaMap = new Map(visitasArr.map((obj) => [obj.cnpj, obj]));
-  const statusMap = new Map(statusArr.map((obj) => [obj.cnpj, obj]));
+        const programacao = programacaoArr.find(
+          (p) => p.cnpj === entidade.cnpj
+        );
+        const visita = visitasArr.find((v) => v.cnpj === entidade.cnpj);
 
-  // Get all unique CNPJs from all arrays
-  const allCnpjs = new Set<string>([
-    ...entidadeMap.keys(),
-    ...programacaoMap.keys(),
-    ...visitaMap.keys(),
-    ...statusMap.keys(),
-  ]);
+        if (programacao) {
+          currrentStatus = StatusNameEnum.Programado;
+        } else if (visita) {
+          if (visita.status === VisitasStatus.EmAnalise) {
+            currrentStatus = StatusNameEnum.EmAnalise;
+            currentResponsavel = visita.usuarioResponsavel;
+          } else if (visita.status === VisitasStatus.Approved) {
+            currrentStatus = StatusNameEnum.Aprovado;
+            currentResponsavel = visita.usuarioResponsavel;
+          }
+        }
 
-  const fullMatches: GroupedItem[] = [];
-  const partialMatches: PartialGroupedItem[] = [];
+        return {
+          cnpj: entidade.cnpj,
+          status: currrentStatus,
+          data_atualizado: new Date(),
+          id_umov: entidade.id_umov,
+          fase_pesquisa: "2025-2",
+          usuarioResponsavel: currentResponsavel,
+        } as StatusInterface;
+      }),
+      toArray(),
+      mergeMap((statusFormattedArr) =>
+        from(statusFormattedArr).pipe(
+          bufferCount(BATCH_SIZE),
+          mergeMap((batchGroup, i) => {
+            const batch = firestore.batch();
+            batchGroup.forEach((status) => {
+              const cnpjKey = status.cnpj.replace(/[^\d]/g, "");
+              const ref = firestore.collection("list_status_v1").doc(cnpjKey);
+              batch.set(ref, status);
+            });
+            return from(batch.commit()).pipe(
+              tap(() =>
+                console.log(
+                  `✅ Batch ${i + 1} enviado com ${batchGroup.length} entidades`
+                )
+              )
+            );
+          })
+        )
+      ),
+      toArray(),
+      map(
+        (): CloudFunctionResponse => ({
+          success: true,
+          message: "✅ Status atualizado com sucesso. ✅",
+        })
+      ),
+      catchError((error: any) => {
+        console.error("❌ Erro ao atualizar status:", error);
+        return of({
+          success: false,
+          message: "Erro ao atualizar status.",
+          error: error.message ?? String(error),
+        } as CloudFunctionResponse);
+      })
+    );
 
-  allCnpjs.forEach((cnpj) => {
-    const entidade = entidadeMap.get(cnpj);
-    const programacao = programacaoMap.get(cnpj);
-    const visita = visitaMap.get(cnpj);
-    const status = statusMap.get(cnpj);
-
-    const presenceCount = [entidade, programacao, visita, status].filter(
-      Boolean
-    ).length;
-
-    const item: any = {
-      entidade,
-      programacao,
-      visita,
-      status,
+    const result = await rxjsPipeline.toPromise();
+    return (
+      result ?? {
+        success: false,
+        message: "Erro inesperado: resultado indefinido.",
+        error: "O pipeline RxJS retornou undefined.",
+      }
+    );
+  } catch (error: any) {
+    console.error("❌ Erro geral:", error);
+    return {
+      success: false,
+      message: "Erro inesperado na execução da Cloud Function.",
+      error: error.message ?? String(error),
     };
-
-    if (presenceCount === 4) {
-      fullMatches.push(item);
-    } else if (presenceCount >= 2) {
-      partialMatches.push(item);
-    }
-  });
-
-  console.log("✅ CNPJs em todos os arrays:", fullMatches.length);
-  console.log("⚠️ CNPJs parciais (>=2 arrays):", partialMatches.length);
-
-  for (let i = 0; i < fullMatches.length; i++) {
-    const element = fullMatches[i];
-
-    if (element.entidade.status_atual !== StatusNameEnum.Aprovado) {
-      const dataDeProgramacao = element.programacao.data_programacao;
-      element.visita.data_status;
-      const dataDeStatus = element.status.data_atualizado;
-
-      const [day, month, yearAndTime] = element.visita.data_status.split("/");
-      const [year, time] = yearAndTime.split(", ");
-      const isoFormat = `${year.trim()}-${month}-${day}T${time}`;
-
-      const dataDeVisita = new Date(isoFormat).getTime();
-      console.log(
-        "data de atualização de programacao",
-        new Date(dataDeProgramacao * 1000)
-      );
-      console.log("-----------------------------------");
-
-      console.log("data de atualização de visita", new Date(dataDeVisita));
-      console.log("-----------------------------------");
-      console.log(
-        "data de atualização de status",
-        new Date(dataDeStatus * 1000)
-      );
-      console.log(
-        "//////////////////////////////////////////////////////////////////////////////////////"
-      );
-
-
-
-
-
-
-    }
   }
-  return {
-    success: true,
-    message: "✅ Status atualizado com sucesso. ✅",
-  };
 };
