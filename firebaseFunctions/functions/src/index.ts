@@ -6,7 +6,7 @@ import { atualizandoProgramacao } from "./atualizadores/programacao";
 import { atualizandoVisitas } from "./atualizadores/visitas";
 import { atualizandoStatus } from "./atualizadores/status";
 import { atualizandoDashboardData } from "./atualizadores/dashboardData";
-import { from, concatMap, toArray, tap, switchMap } from "rxjs";
+import { from, concatMap, toArray, tap, switchMap, lastValueFrom } from "rxjs";
 import { atualizarLog } from "./atualizadores/logDeSincronizacao";
 
 
@@ -23,7 +23,8 @@ export const atualizarDadoFull = onSchedule("0 6-22 * * 1-5", async (event) => {
     atualizandoStatus,
     atualizandoDashboardData,
   ];
-  return from(funcoesEmOrdem)
+  return lastValueFrom(
+  from(funcoesEmOrdem)
     .pipe(
       concatMap((fn) => from(fn())),
       toArray(),
@@ -44,7 +45,7 @@ export const atualizarDadoFull = onSchedule("0 6-22 * * 1-5", async (event) => {
         // Dispara log final
       }),
       switchMap((resultados) => atualizarLog(resultados))
-    ).toPromise();
+    ))//.toPromise();
 });
 
 
