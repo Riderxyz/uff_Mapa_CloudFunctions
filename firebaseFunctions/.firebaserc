@@ -1,5 +1,12 @@
 {
   "projects": {
-    "default": "uffmapa-4fdee"
-  }
+    "default": "painelvivaprod"
+  },
+  "targets": {},
+  "etags": {
+    "painelvivaprod": {
+      "extensionInstances": {}
+    }
+  },
+  "dataconnectEmulatorConfig": {}
 }
