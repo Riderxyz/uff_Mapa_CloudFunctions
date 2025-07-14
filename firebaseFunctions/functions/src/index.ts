@@ -1,23 +1,28 @@
 /* import { onRequest } from "firebase-functions/v2/https"; */
 import { initializeApp } from "firebase-admin/app";
 import { onSchedule } from "firebase-functions/scheduler";
-/* import { atualizandoProgramacao } from "./atualizadores/programacao";
-import { atualizandoStatus } from "./atualizadores/status";
+import { CloudFunctionResponse } from "./interface/cloudFunctionResponse.interface";
+import { atualizandoProgramacao } from "./atualizadores/programacao";
 import { atualizandoVisitas } from "./atualizadores/visitas";
-import { CloudFunctionResponse } from "./interface/cloudFunctionResponse.interface"; */
+import { atualizandoStatus } from "./atualizadores/status";
+import { atualizandoDashboardData } from "./atualizadores/dashboardData";
+import { from, concatMap, toArray, tap, switchMap } from "rxjs";
+import { atualizarLog } from "./atualizadores/logDeSincronizacao";
+
 
 // Inicializa o Firebase Admin SDK
 initializeApp();
 
 
 export const atualizarDadoFull = onSchedule("0 6-22 * * 1-5", async (event) => {
-const funcoesEmOrdem: (() => Promise<CloudFunctionResponse>)[] = [
+
+  console.log("🔄 Iniciando a atualização completa...");
+  const funcoesEmOrdem: (() => Promise<CloudFunctionResponse>)[] = [
     atualizandoProgramacao,
     atualizandoVisitas,
     atualizandoStatus,
     atualizandoDashboardData,
   ];
-
   from(funcoesEmOrdem)
     .pipe(
       concatMap((fn) => from(fn())),
@@ -41,11 +46,8 @@ const funcoesEmOrdem: (() => Promise<CloudFunctionResponse>)[] = [
       }),
       switchMap((resultados) => atualizarLog(resultados))
     )
-    .subscribe({
-      complete: () => console.log("🏁 Execução sequencial completa!"),
-      error: (err) => console.error("🚨 Erro inesperado:", err),
-    });
-}
+
+
 });
 
 

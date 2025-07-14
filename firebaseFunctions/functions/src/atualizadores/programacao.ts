@@ -3,11 +3,13 @@ import * as xml2js from "xml2js";
 import axios from "axios";
 import * as admin from "firebase-admin";
 
-import { Entry } from "../interface/programacaoXML.interface";
+import { Entry } from "../interface/umovResponse.interface";
 import { EntryXMLInterface } from "../interface/entryXML.interface";
 import { ProgramacaoInterface } from "../interface/programacao.interface";
 import { EntidadesInterface } from "../interface/entidade.interface";
 import { CloudFunctionResponse } from "../interface/cloudFunctionResponse.interface";
+import { CloudFunctionResponseType } from "../interface/enums";
+
 
 export const atualizandoProgramacao = async (): Promise<CloudFunctionResponse> => {
   try {
@@ -18,20 +20,23 @@ export const atualizandoProgramacao = async (): Promise<CloudFunctionResponse> =
     console.log("🔄 Iniciando a atualização da programação...");
 
     const firestore = admin.firestore();
-    const entidadesSnapshot = await firestore.collection("entidade_v3").get();
+    const entidadesSnapshot = await firestore.collection("entidades_v1").get();
 
     const entidadesMap = new Map<string, EntidadesInterface>();
-    entidadesSnapshot.forEach((doc) => {
-      const data = doc.data() as EntidadesInterface;
-      if (data.id_umov) {
-        entidadesMap.set(data.id_umov, data);
-      }
-    });
 
     const parser = new xml2js.Parser({
       explicitArray: false,
       mergeAttrs: true,
       attrNameProcessors: [(name) => `_${name}`],
+    });
+
+
+    entidadesSnapshot.forEach((doc) => {
+    //  console.log(doc.data());
+      const data = doc.data() as EntidadesInterface;
+      if (data.id_umov) {
+        entidadesMap.set(data.id_umov, data);
+      }
     });
 
     const fetchAndParse = (page: number) =>
@@ -64,7 +69,6 @@ export const atualizandoProgramacao = async (): Promise<CloudFunctionResponse> =
     const programacaoParaOFirebase: ProgramacaoInterface[] = [];
     const concurrency = 10;
     const batches = [];
-
     for (let i = 0; i < allEntries!.length; i += concurrency) {
       const batch = allEntries!.slice(i, i + concurrency);
       batches.push(
@@ -91,6 +95,7 @@ export const atualizandoProgramacao = async (): Promise<CloudFunctionResponse> =
     console.log("✅ Atualização finalizada com sucesso.");
     const response: CloudFunctionResponse = {
       success: true,
+      type: CloudFunctionResponseType.Programacao,
       message: "✅ Programação atualizada com sucesso. ✅",
     };
     return response;
@@ -98,6 +103,7 @@ export const atualizandoProgramacao = async (): Promise<CloudFunctionResponse> =
     console.error("❌ Erro na atualização da programação:", error);
     const response: CloudFunctionResponse = {
       success: false,
+      type: CloudFunctionResponseType.Programacao,
       message: "❌ Erro ao atualizar a programação. ❌",
       error: error.toString(),
     };
@@ -129,13 +135,13 @@ async function processEntry(
       parseInt(dateParts[0]),
       parseInt(dateParts[1]) - 1,
       parseInt(dateParts[2])
-    ).getTime();
+    )
 
     const entidade = entidadesMap.get(serviceLocalId);
-
     const programacao: ProgramacaoInterface = {
       id_umov: serviceLocalId,
       cnpj: entidade?.cnpj || "",
+      usuarioResponsavel: 'Servidor',
       data_programacao: timestamp,
       fase_pesquisa: "2025-2",
       formularios: [],
@@ -156,6 +162,8 @@ async function processEntry(
       programacao.monitor_1 = agentName;
       programacaoList.push(programacao);
     }
+
+    
   } catch (error) {
     console.error(`❌ Erro ao processar entry ${entry._id}:`, error);
   }
@@ -166,7 +174,7 @@ async function salvarProgramacao(
   firestore: FirebaseFirestore.Firestore
 ): Promise<void> {
   const batch = firestore.batch();
-  const collectionRef = firestore.collection("programacao_v4");
+  const collectionRef = firestore.collection("programacao_v1");
 
   for (const item of programacoes) {
     const docRef = collectionRef.doc(item.cnpj);
@@ -174,14 +182,14 @@ async function salvarProgramacao(
   }
 
   await batch.commit();
-  console.log(`✅ Salvos ${programacoes.length} registros em 'programacao_v4'`);
+  console.log(`✅ Salvos ${programacoes.length} registros em 'programacao_testesLocais'`);
 }
 
 async function limparProgramacaoAntiga(
   firestore: FirebaseFirestore.Firestore,
   novosIds: string[]
 ): Promise<void> {
-  const snapshot = await firestore.collection("programacao_v4").get();
+  const snapshot = await firestore.collection("programacao_v1").get();
   const antigos = snapshot.docs.filter((doc) => !novosIds.includes(doc.id));
 
   const batch = firestore.batch();
