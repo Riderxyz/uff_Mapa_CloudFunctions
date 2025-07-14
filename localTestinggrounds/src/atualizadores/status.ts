@@ -17,7 +17,7 @@ import {
   VisitasStatus,
 } from "../interface/visitas.interface";
 import { StatusInterface } from "../interface/status.interface";
-import { StatusNameEnum } from "../interface/enums";
+import { CloudFunctionResponseType, StatusNameEnum } from "../interface/enums";
 
 export const atualizandoStatus = async (): Promise<CloudFunctionResponse> => {
   const firestore = admin.firestore();
@@ -56,7 +56,9 @@ export const atualizandoStatus = async (): Promise<CloudFunctionResponse> => {
 
         if (programacao) {
           currrentStatus = StatusNameEnum.Programado;
-        } else if (visita) {
+        } 
+        
+        if (visita) {
           if (visita.status === VisitasStatus.EmAnalise) {
             currrentStatus = StatusNameEnum.EmAnalise;
             currentResponsavel = visita.usuarioResponsavel;
@@ -65,7 +67,6 @@ export const atualizandoStatus = async (): Promise<CloudFunctionResponse> => {
             currentResponsavel = visita.usuarioResponsavel;
           }
         }
-
         return {
           cnpj: entidade.cnpj,
           status: currrentStatus,
@@ -80,13 +81,30 @@ export const atualizandoStatus = async (): Promise<CloudFunctionResponse> => {
         from(statusFormattedArr).pipe(
           bufferCount(BATCH_SIZE),
           mergeMap((batchGroup, i) => {
-            const batch = firestore.batch();
+            const listaStatusBatch = firestore.batch();
+            const entidadesBatch = firestore.batch();
             batchGroup.forEach((status) => {
               const cnpjKey = status.cnpj.replace(/[^\d]/g, "");
-              const ref = firestore.collection("list_status_v1").doc(cnpjKey);
-              batch.set(ref, status);
+              const listaStatusRef = firestore.collection("list_status_v1").doc(cnpjKey);
+              const entidadeRef = firestore.collection("entidades_v1").doc(cnpjKey);
+              const partialEntidade: Partial<EntidadesInterface> = {
+                status_atual: status.status,
+                status_atual_data: status.data_atualizado,
+                finalizada: status.status === StatusNameEnum.Aprovado
+                  ? {
+                      data: status.data_atualizado,
+                      status: status.status,
+                      usuario: status.usuarioResponsavel
+                    }
+                  : undefined
+              }
+              listaStatusBatch.set(listaStatusRef, status);
+              entidadesBatch.update(entidadeRef, partialEntidade);
             });
-            return from(batch.commit()).pipe(
+            return forkJoin([
+              from(listaStatusBatch.commit()),from( entidadesBatch.commit())
+            ])
+            .pipe(
               tap(() =>
                 console.log(
                   `✅ Batch ${i + 1} enviado com ${batchGroup.length} entidades`
@@ -100,6 +118,7 @@ export const atualizandoStatus = async (): Promise<CloudFunctionResponse> => {
       map(
         (): CloudFunctionResponse => ({
           success: true,
+          type: CloudFunctionResponseType.Status,
           message: "✅ Status atualizado com sucesso. ✅",
         })
       ),
@@ -107,16 +126,17 @@ export const atualizandoStatus = async (): Promise<CloudFunctionResponse> => {
         console.error("❌ Erro ao atualizar status:", error);
         return of({
           success: false,
+          type: CloudFunctionResponseType.Status,
           message: "Erro ao atualizar status.",
           error: error.message ?? String(error),
         } as CloudFunctionResponse);
       })
     );
-
     const result = await rxjsPipeline.toPromise();
     return (
       result ?? {
         success: false,
+        type: CloudFunctionResponseType.Status,
         message: "Erro inesperado: resultado indefinido.",
         error: "O pipeline RxJS retornou undefined.",
       }
@@ -125,6 +145,7 @@ export const atualizandoStatus = async (): Promise<CloudFunctionResponse> => {
     console.error("❌ Erro geral:", error);
     return {
       success: false,
+      type: CloudFunctionResponseType.Status,
       message: "Erro inesperado na execução da Cloud Function.",
       error: error.message ?? String(error),
     };

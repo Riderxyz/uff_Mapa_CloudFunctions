@@ -19,6 +19,7 @@ import {
   VisitasInterface,
   VisitasStatus,
 } from "../interface/visitas.interface";
+import { CloudFunctionResponseType } from "../interface/enums";
 
 export const atualizandoVisitas = async (): Promise<CloudFunctionResponse> => {
   console.log("🔄 Iniciando a atualização da Visitas...");
@@ -51,6 +52,7 @@ export const atualizandoVisitas = async (): Promise<CloudFunctionResponse> => {
         }),
         map((qtde) => ({
           success: true,
+          type: CloudFunctionResponseType.Visitas,
           message: `✅ Visitas atualizadas com sucesso (${qtde} registros). ✅`,
         }))
       )
@@ -59,6 +61,7 @@ export const atualizandoVisitas = async (): Promise<CloudFunctionResponse> => {
     console.error("Erro geral na função:", error);
     return {
       success: false,
+      type: CloudFunctionResponseType.Visitas,
       message: "❌ Erro ao atualizar visitas. ❌",
       error: error.toString(),
     };

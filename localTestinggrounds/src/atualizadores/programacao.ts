@@ -8,6 +8,7 @@ import { EntryXMLInterface } from "../interface/entryXML.interface";
 import { ProgramacaoInterface } from "../interface/programacao.interface";
 import { EntidadesInterface } from "../interface/entidade.interface";
 import { CloudFunctionResponse } from "../interface/cloudFunctionResponse.interface";
+import { CloudFunctionResponseType } from "../interface/enums";
 
 
 export const atualizandoProgramacao = async (): Promise<CloudFunctionResponse> => {
@@ -94,6 +95,7 @@ export const atualizandoProgramacao = async (): Promise<CloudFunctionResponse> =
     console.log("✅ Atualização finalizada com sucesso.");
     const response: CloudFunctionResponse = {
       success: true,
+      type: CloudFunctionResponseType.Programacao,
       message: "✅ Programação atualizada com sucesso. ✅",
     };
     return response;
@@ -101,6 +103,7 @@ export const atualizandoProgramacao = async (): Promise<CloudFunctionResponse> =
     console.error("❌ Erro na atualização da programação:", error);
     const response: CloudFunctionResponse = {
       success: false,
+      type: CloudFunctionResponseType.Programacao,
       message: "❌ Erro ao atualizar a programação. ❌",
       error: error.toString(),
     };

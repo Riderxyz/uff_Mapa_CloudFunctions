@@ -11,7 +11,7 @@ import {
   DashboardStats,
   PercentualPorRegiao,
 } from "../interface/dashboard.interface";
-import { StatusNameEnum, RegiaoBrasilNomeEnum } from "../interface/enums";
+import { StatusNameEnum, RegiaoBrasilNomeEnum, CloudFunctionResponseType } from "../interface/enums";
 import { v4 as uuidv4 } from "uuid";
 interface StatusGroup {
   status: StatusNameEnum;
@@ -86,21 +86,17 @@ export const atualizandoDashboardData =
       );
 
       const finalStats = await lastValueFrom(stats$);
-
-    /*   stats$.subscribe((res) => {
-        console.log(res);
-      }); */
-      //await salvarDashboardData(finalStats, firestore);
-      //     await limparEntidadesSubcolecao(firestore, finalStats.entidadesArr.map(e => e.cnpj));
-
+      await salvarDashboardData(finalStats, firestore);
     return {
         success: true,
+        type: CloudFunctionResponseType.Dashboard,
         message: "✅ Dashboard Data atualizado com sucesso. ✅",
       };
     } catch (error: any) {
       console.error("❌ Erro ao atualizar Dashboard Data:", error);
       return {
         success: false,
+        type: CloudFunctionResponseType.Dashboard,
         message: "❌ Erro ao atualizar Dashboard Data. ❌",
         error: error.toString(),
       };
@@ -147,7 +143,7 @@ const calculateAllMetrics = (
       totalFinalizadas++;
     }
   });
-
+totalProgramado = totalProgramado + totalVisitado;
   return {
     totalEntidades,
     totalProgramado,
@@ -158,6 +154,8 @@ const calculateAllMetrics = (
     percentualFinalizado: calcularPercentual(totalFinalizadas, totalEntidades),
   };
 };
+
+
 
 const calcularPercentualPorRegiao = (
   entidades: EntidadesInterface[]
@@ -273,7 +271,6 @@ const salvarDashboardData = async (
   const summaryRef = firestore
     .collection("dashboard_data")
     .doc("dashboardLatestData");
-  const entidadesRef = summaryRef.collection("entidades");
 
   await summaryRef.set(
     {
@@ -295,7 +292,3 @@ const salvarDashboardData = async (
   await batch.commit();
 };
 
-const limparEntidadesSubcolecao = async (
-  firestore: FirebaseFirestore.Firestore,
-  novosIds: string[]
-): Promise<void> => {};

@@ -10,10 +10,7 @@ import fs from 'fs';
 import * as admin from 'firebase-admin';
 import { v4 as uuidv4 } from 'uuid';
 
-admin.initializeApp({
-  credential: admin.credential.cert(require("./painelDevKeys.json")),
- // credential: admin.credential.cert(require("./painelProdKeys.json")),
-});
+export const repopular = async () => {
 
 
 const parser = new Parser({
@@ -25,66 +22,7 @@ const parser = new Parser({
 
 const firestore = admin.firestore();
 
-const extractFieldArray = (...fields: (string | undefined)[]) => 
-  fields.filter((val): val is string => !!val);
 
-const parseGeoCoordinates = (geo: string | undefined): { lat: number; long: number } => {
-  if (!geo) return { lat: 0, long: 0 };
-  const [lat, long] = geo.split(',').map(parseFloat);
-  return { lat: lat || 0, long: long || 0 };
-};
-
-const mapToEntidade = (entidade: ServiceLocal): EntidadesInterface => {
-  const { lat, long } = parseGeoCoordinates(entidade.geoCoordinate);
-  const emails = extractFieldArray(entidade.customFields.Email1, entidade.customFields.Email2, entidade.customFields.Email3);
-  const telefones = extractFieldArray(entidade.customFields.Telefone1, entidade.customFields.Telefone2, entidade.customFields.Telefone3);
-
-
-const tipoEntidade:TipoEntidadeInterface[] = []
-
-if (Number(entidade.customFields.Loc__QtdTermosFomento) > 0) {
-  tipoEntidade.push({ id: uuidv4(), tipo: TipoEntidadeEnum.Fomento })
-}
-
-if (Number(entidade.customFields.Loc__QtdVagasContratadas) > 0) {
-  tipoEntidade.push({ id: uuidv4(), tipo: TipoEntidadeEnum.Vaga })
-}
-
-  return {
-    codigoEntidade: entidade.alternativeIdentifier.toString(),
-    nome: entidade.corporateName,
-    numeroContrato: entidade.customFields.Loc__Contrato,
-    googleLink: entidade.customFields.Link__Livre,
-    tipoEntidade: tipoEntidade,
-    status_atual: StatusNameEnum.Cadastrado,
-    status_atual_data: new Date(),
-    vagas: {
-      total: Number(entidade.customFields.Loc__QtdVagasContratadas),
-      vagasMasculinas: Number(entidade.customFields.Quant__Vagas__Contratadas__Masc),
-      vagasFemininas: Number(entidade.customFields.Quant__Vagas__Contratadas__Fem),
-      vagasMaeNutriz: Number(entidade.customFields.Quant__Vagas__Contratadas__Mae__Nutriz),
-    },
-    endereco: {
-      regiao: entidade.customFields.Regio as RegiaoBrasilNomeEnum,
-      pais: entidade.country,
-      cep: entidade.zipCode,
-      bairro: entidade.cityNeighborhood,
-      municipio: entidade.city,
-      complemento: entidade.streetComplement,
-      rua: entidade.street,
-      uf: entidade.state as EstadoEnum,
-      lat,
-      long,
-    },
-    telefone: telefones,
-    email: emails,
-    cnpj: entidade.customFields.CNPJ,
-    id_umov: entidade.id,
-    fase_pesquisa: ['2025-2'],
-  };
-};
-
-export const repopular = async () => {
   console.clear();
   console.log('🔄 Iniciando o processo de repopulação...');
 
@@ -150,3 +88,65 @@ export const repopular = async () => {
 
    fs.writeFileSync("entidadesFormatadas.json", JSON.stringify(entidadesFormatadas, null, 2)); */
 };
+
+
+const extractFieldArray = (...fields: (string | undefined)[]) => 
+  fields.filter((val): val is string => !!val);
+
+const parseGeoCoordinates = (geo: string | undefined): { lat: number; long: number } => {
+  if (!geo) return { lat: 0, long: 0 };
+  const [lat, long] = geo.split(',').map(parseFloat);
+  return { lat: lat || 0, long: long || 0 };
+};
+
+const mapToEntidade = (entidade: ServiceLocal): EntidadesInterface => {
+  const { lat, long } = parseGeoCoordinates(entidade.geoCoordinate);
+  const emails = extractFieldArray(entidade.customFields.Email1, entidade.customFields.Email2, entidade.customFields.Email3);
+  const telefones = extractFieldArray(entidade.customFields.Telefone1, entidade.customFields.Telefone2, entidade.customFields.Telefone3);
+
+
+const tipoEntidade:TipoEntidadeInterface[] = []
+
+if (Number(entidade.customFields.Loc__QtdTermosFomento) > 0) {
+  tipoEntidade.push({ id: uuidv4(), tipo: TipoEntidadeEnum.Fomento })
+}
+
+if (Number(entidade.customFields.Loc__QtdVagasContratadas) > 0) {
+  tipoEntidade.push({ id: uuidv4(), tipo: TipoEntidadeEnum.Vaga })
+}
+
+  return {
+    codigoEntidade: entidade.alternativeIdentifier.toString(),
+    nome: entidade.corporateName,
+    numeroContrato: entidade.customFields.Loc__Contrato,
+    googleLink: entidade.customFields.Link__Livre,
+    tipoEntidade: tipoEntidade,
+    status_atual: StatusNameEnum.Cadastrado,
+    status_atual_data: new Date(),
+    vagas: {
+      total: Number(entidade.customFields.Loc__QtdVagasContratadas),
+      vagasMasculinas: Number(entidade.customFields.Quant__Vagas__Contratadas__Masc),
+      vagasFemininas: Number(entidade.customFields.Quant__Vagas__Contratadas__Fem),
+      vagasMaeNutriz: Number(entidade.customFields.Quant__Vagas__Contratadas__Mae__Nutriz),
+    },
+    endereco: {
+      regiao: entidade.customFields.Regio as RegiaoBrasilNomeEnum,
+      pais: entidade.country,
+      cep: entidade.zipCode,
+      bairro: entidade.cityNeighborhood,
+      municipio: entidade.city,
+      complemento: entidade.streetComplement,
+      rua: entidade.street,
+      uf: entidade.state as EstadoEnum,
+      lat,
+      long,
+    },
+    telefone: telefones,
+    email: emails,
+    cnpj: entidade.customFields.CNPJ,
+    id_umov: entidade.id,
+    fase_pesquisa: ['2025-2'],
+  };
+};
+
+

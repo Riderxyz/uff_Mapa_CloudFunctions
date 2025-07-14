@@ -57,3 +57,11 @@ export interface RegiaoBrasilEnum {
   regiao: RegiaoBrasilNomeEnum;
   ufs: EstadoEnum[];
 }
+
+
+export enum CloudFunctionResponseType {
+  Visitas = "Visitas",
+  Dashboard = "Dashboard",
+  Programacao = "Programacao",
+  Status = "Status",
+}

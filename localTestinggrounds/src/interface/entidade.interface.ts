@@ -46,7 +46,7 @@ vagasMaeNutriz: number;
 }
 
 export interface FinalizacaoInfo {
-  data: string; // formato: dd/MM/yyyy, HH:mm:ss
+  data: Date; // formato: dd/MM/yyyy, HH:mm:ss
   status: StatusNameEnum;
   usuario: string;
 }
