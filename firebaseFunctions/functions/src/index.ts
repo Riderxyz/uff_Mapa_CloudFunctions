@@ -23,7 +23,7 @@ export const atualizarDadoFull = onSchedule("0 6-22 * * 1-5", async (event) => {
     atualizandoStatus,
     atualizandoDashboardData,
   ];
-  from(funcoesEmOrdem)
+  return from(funcoesEmOrdem)
     .pipe(
       concatMap((fn) => from(fn())),
       toArray(),
@@ -33,7 +33,6 @@ export const atualizarDadoFull = onSchedule("0 6-22 * * 1-5", async (event) => {
         const falhas = total - sucesso;
 
         console.log(`✅ Sucesso: ${sucesso}, ❌ Falhas: ${falhas}`);
-
         if (sucesso === total) {
           console.log("🟢 Todas as funções executadas com sucesso!");
         } else if (falhas === total) {
@@ -45,9 +44,7 @@ export const atualizarDadoFull = onSchedule("0 6-22 * * 1-5", async (event) => {
         // Dispara log final
       }),
       switchMap((resultados) => atualizarLog(resultados))
-    )
-
-
+    ).toPromise();
 });
 
 

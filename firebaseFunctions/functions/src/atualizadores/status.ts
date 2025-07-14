@@ -8,7 +8,6 @@ import {
   tap,
 } from "rxjs/operators";
 import * as admin from "firebase-admin";
-
 import { CloudFunctionResponse } from "../interface/cloudFunctionResponse.interface";
 import { EntidadesInterface } from "../interface/entidade.interface";
 import { ProgramacaoInterface } from "../interface/programacao.interface";
@@ -56,8 +55,17 @@ export const atualizandoStatus = async (): Promise<CloudFunctionResponse> => {
 
         if (programacao) {
           currrentStatus = StatusNameEnum.Programado;
-        }
+          const dataVisita: string = (programacao.data_programacao as any)
+            .toDate()
+            .toISOString()
+            .split("T")[0];
+          const hoje: string = new Date().toISOString().split("T")[0];
 
+          if (dataVisita === hoje) {
+            currrentStatus = StatusNameEnum.EmVisita;
+            currentResponsavel = programacao.usuarioResponsavel;
+          }
+        }
         if (visita) {
           if (visita.status === VisitasStatus.EmAnalise) {
             currrentStatus = StatusNameEnum.EmAnalise;
