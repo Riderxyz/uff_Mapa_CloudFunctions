@@ -82,7 +82,7 @@ export const atualizandoProgramacao = async (): Promise<CloudFunctionResponse> =
 
     for (let i = 0; i < batches.length; i++) {
       await batches[i];
-      console.log(`🔄 Processados ${Math.min((i + 1) * concurrency, allEntries!.length)} de ${allEntries!.length}`);
+      //console.log(`🔄 Processados ${Math.min((i + 1) * concurrency, allEntries!.length)} de ${allEntries!.length}`);
     }
 
     console.log("💾 Salvando no Firestore...");

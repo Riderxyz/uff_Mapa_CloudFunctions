@@ -14,7 +14,11 @@ import { atualizarLog } from "./atualizadores/logDeSincronizacao";
 initializeApp();
 
 
-export const atualizarDadoFull = onSchedule("0 6-22 * * 1-5", async (event) => {
+export const atualizarDadoFull = onSchedule({
+  schedule:  "0 6-22 * * 1-5",
+  memory: '512MiB',
+  timeZone: 'America/Sao_Paulo'
+}, async (event) => {
 
   console.log("🔄 Iniciando a atualização completa...");
   const funcoesEmOrdem: (() => Promise<CloudFunctionResponse>)[] = [

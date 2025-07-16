@@ -10,7 +10,7 @@ import { atualizarLog } from "./atualizadores/log";
 
 // Inicialize o Firebase Admin SDK
 admin.initializeApp({
-  credential: admin.credential.cert(require("./painelProdKeys.json")),
+  credential: admin.credential.cert(require("./painelDevKeys.json")),
 });
 
 console.clear();
